@@ -1,0 +1,139 @@
+{
+  "app": {
+    "title": "InstaFollow Comparator"
+  },
+  "navigation": {
+    "viewOnGithub": "View on GitHub"
+  },
+  "urls": {
+    "github": "https://github.com/Synapsr/InstaFollowComparator"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Your Instagram",
+      "titleHighlight": "Follow Relationships",
+      "subtitle": "The only safe way to analyze your Instagram relationships. No scraping, no account risks, no broken tools. Simply upload Meta's official data export to discover your follow relationships instantly."
+    },
+    "upload": {
+      "title": "Upload Your Instagram Data",
+      "subtitle": "Select the ZIP file you downloaded from Instagram's data export feature.",
+      "buttonUpload": "Choose ZIP File",
+      "buttonProcessing": "Processing...",
+      "exampleData": "Or try with example data",
+      "messages": {
+        "loadingExample": "Loading example data...",
+        "processingExample": "Processing example Instagram data...",
+        "processing": "Processing your Instagram data...",
+        "complete": "Analysis complete! Redirecting...",
+        "exampleComplete": "Example analysis complete! Redirecting..."
+      },
+      "errors": {
+        "invalidFile": "Please select a valid ZIP file",
+        "exampleFailed": "Failed to load example data",
+        "processingFailed": "Failed to process file"
+      }
+    },
+    "features": {
+      "security": {
+        "title": "100% Clean & Safe",
+        "description": "<strong>No scraping, no bans, no broken apps.</strong> Uses only Meta's official data export. Your data stays in your browser."
+      },
+      "speed": {
+        "title": "Lightning Fast",
+        "description": "Get instant results with our optimized data processing algorithms."
+      },
+      "analysis": {
+        "title": "Detailed Analysis",
+        "description": "See mutual follows, one-way relationships, and comprehensive statistics."
+      }
+    },
+    "howTo": {
+      "title": "How to Export Your Instagram Data",
+      "steps": {
+        "step1": {
+          "title": "Go to Accounts Center",
+          "description": "Visit"
+        },
+        "step2": {
+          "title": "Create Export",
+          "description": "Select your Instagram account → Choose \"Download to device\""
+        },
+        "step3": {
+          "title": "Customize Information",
+          "description": "Uncheck all → Check only <strong>Contacts → Followers and Following</strong> → Save"
+        },
+        "step4": {
+          "title": "Set Period & Format",
+          "description": "Period: \"All time\" → <strong>Format: JSON</strong> → Start Export"
+        }
+      },
+      "tip": "<strong>⚡ Fast Export:</strong> With only followers data selected, your export will be ready in <strong>less than a minute</strong>! You'll receive an email with the download link immediately."
+    }
+  },
+  "results": {
+    "loading": "Loading results...",
+    "noResults": "No results found. Please upload your Instagram data first.",
+    "goBackHome": "Go Back Home",
+    "backToHome": "Back to Home",
+    "shareButton": "Share",
+    "exportButton": "Export",
+    "title": "Your Instagram Follow Analysis",
+    "stats": {
+      "totalFollowers": "Total Followers",
+      "totalFollowing": "Total Following",
+      "mutualFollows": "Mutual Follows",
+      "followBackRate": "Follow Back Rate"
+    },
+    "tabs": {
+      "mutual": "Mutual Follows",
+      "youFollow": "Don't Follow Back",
+      "theyFollow": "Your Followers",
+      "closeFriends": "Close Friends",
+      "pending": "Pending Requests",
+      "recentRequests": "Recent Follow Requests",
+      "unfollowed": "Recently Unfollowed"
+    },
+    "descriptions": {
+      "mutual": "People who follow you and you follow back",
+      "youFollow": "People you follow but they don't follow you back",
+      "theyFollow": "People who follow you but you don't follow them back",
+      "closeFriends": "Users you've added to your close friends list",
+      "pending": "Follow requests you've sent that are still pending",
+      "recentRequests": "Recent follow requests received from other users",
+      "unfollowed": "Accounts you've recently unfollowed"
+    },
+    "search": {
+      "placeholder": "Search accounts...",
+      "clearSearch": "Clear search (Esc)",
+      "found": "Found <strong>{count}</strong> account{plural} matching \"<strong>{query}</strong>\"",
+      "notFound": "No accounts found matching \"<strong>{query}</strong>\""
+    },
+    "empty": {
+      "searchNoResults": "No accounts matching \"{query}\" found in this category.",
+      "mutual": "No mutual follows found.",
+      "youFollow": "Everyone you follow follows you back!",
+      "theyFollow": "You follow everyone who follows you!",
+      "closeFriends": "No close friends data available.",
+      "pending": "No pending follow requests.",
+      "recentRequests": "No recent follow requests.",
+      "unfollowed": "No recently unfollowed accounts."
+    },
+    "user": {
+      "since": "Since {date}",
+      "view": "View"
+    },
+    "share": {
+      "title": "Instagram Follow Analysis",
+      "text": "📊 My Instagram Follow Analysis:\n\n👥 Mutual Follows: {mutualCount}\n➡️ I Follow (No Follow Back): {youFollowCount}\n⬅️ They Follow Me (I Don't Follow): {theyFollowCount}\n\nAnalyze your connections at: {url}",
+      "copied": "Analysis summary copied to clipboard!"
+    }
+  },
+  "footer": {
+    "madeWith": {
+      "prefix": "Made with",
+      "suffix": "for Instagram users who want to understand their connections"
+    },
+    "description": "This project is open source and respects Meta's Terms of Service.<br />Your data is processed locally and never leaves your browser.",
+    "proudlyCreatedBy": "Proudly created by"
+  }
+}

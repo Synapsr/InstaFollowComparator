@@ -1,0 +1,139 @@
+{
+  "app": {
+    "title": "InstaFollow Comparator"
+  },
+  "navigation": {
+    "viewOnGithub": "Voir sur GitHub"
+  },
+  "urls": {
+    "github": "https://github.com/Synapsr/InstaFollowComparator"
+  },
+  "home": {
+    "hero": {
+      "title": "Découvrez vos relations",
+      "titleHighlight": "Instagram",
+      "subtitle": "Le seul moyen sûr d'analyser vos relations Instagram. Pas de scraping, aucun risque pour votre compte, aucun outil cassé. Téléchargez simplement l'export officiel de Meta pour découvrir instantanément vos relations de suivi."
+    },
+    "upload": {
+      "title": "Téléchargez vos données Instagram",
+      "subtitle": "Sélectionnez le fichier ZIP que vous avez téléchargé depuis la fonction d'export de données d'Instagram.",
+      "buttonUpload": "Choisir le fichier ZIP",
+      "buttonProcessing": "Traitement...",
+      "exampleData": "Ou essayez avec des données d'exemple",
+      "messages": {
+        "loadingExample": "Chargement des données d'exemple...",
+        "processingExample": "Traitement des données Instagram d'exemple...",
+        "processing": "Traitement de vos données Instagram...",
+        "complete": "Analyse terminée ! Redirection...",
+        "exampleComplete": "Analyse d'exemple terminée ! Redirection..."
+      },
+      "errors": {
+        "invalidFile": "Veuillez sélectionner un fichier ZIP valide",
+        "exampleFailed": "Échec du chargement des données d'exemple",
+        "processingFailed": "Échec du traitement du fichier"
+      }
+    },
+    "features": {
+      "security": {
+        "title": "100% Propre et Sûr",
+        "description": "<strong>Pas de scraping, pas de bannissement, pas d'applications cassées.</strong> Utilise uniquement l'export officiel de Meta. Vos données restent dans votre navigateur."
+      },
+      "speed": {
+        "title": "Ultra Rapide",
+        "description": "Obtenez des résultats instantanés avec nos algorithmes de traitement de données optimisés."
+      },
+      "analysis": {
+        "title": "Analyse Détaillée",
+        "description": "Voyez les abonnements mutuels, les relations à sens unique et des statistiques complètes."
+      }
+    },
+    "howTo": {
+      "title": "Comment exporter vos données Instagram",
+      "steps": {
+        "step1": {
+          "title": "Accédez au Centre des comptes",
+          "description": "Visitez"
+        },
+        "step2": {
+          "title": "Créer un export",
+          "description": "Sélectionnez votre compte Instagram → Choisissez \"Télécharger sur l'appareil\""
+        },
+        "step3": {
+          "title": "Personnaliser les informations",
+          "description": "Décochez tout → Cochez uniquement <strong>Contacts → Abonnés et Abonnements</strong> → Sauvegarder"
+        },
+        "step4": {
+          "title": "Définir la période et le format",
+          "description": "Période : \"Depuis toujours\" → <strong>Format : JSON</strong> → Commencer l'export"
+        }
+      },
+      "tip": "<strong>⚡ Export rapide :</strong> Avec seulement les données d'abonnés sélectionnées, votre export sera prêt en <strong>moins d'une minute</strong> ! Vous recevrez immédiatement un e-mail avec le lien de téléchargement."
+    }
+  },
+  "results": {
+    "loading": "Chargement des résultats...",
+    "noResults": "Aucun résultat trouvé. Veuillez d'abord télécharger vos données Instagram.",
+    "goBackHome": "Retour à l'accueil",
+    "backToHome": "Retour à l'accueil",
+    "shareButton": "Partager",
+    "exportButton": "Exporter",
+    "title": "Votre analyse de suivi Instagram",
+    "stats": {
+      "totalFollowers": "Total d'abonnés",
+      "totalFollowing": "Total d'abonnements",
+      "mutualFollows": "Abonnements mutuels",
+      "followBackRate": "Taux de retour d'abonnement"
+    },
+    "tabs": {
+      "mutual": "Abonnements mutuels",
+      "youFollow": "Ne vous suivent pas",
+      "theyFollow": "Vos abonnés",
+      "closeFriends": "Amis proches",
+      "pending": "Demandes en attente",
+      "recentRequests": "Demandes récentes",
+      "unfollowed": "Récemment désabonnés"
+    },
+    "descriptions": {
+      "mutual": "Personnes qui vous suivent et que vous suivez en retour",
+      "youFollow": "Personnes que vous suivez mais qui ne vous suivent pas en retour",
+      "theyFollow": "Personnes qui vous suivent mais que vous ne suivez pas en retour",
+      "closeFriends": "Utilisateurs que vous avez ajoutés à votre liste d'amis proches",
+      "pending": "Demandes de suivi que vous avez envoyées et qui sont toujours en attente",
+      "recentRequests": "Demandes de suivi récentes reçues d'autres utilisateurs",
+      "unfollowed": "Comptes que vous avez récemment désabonnés"
+    },
+    "search": {
+      "placeholder": "Rechercher des comptes...",
+      "clearSearch": "Effacer la recherche (Échap)",
+      "found": "Trouvé <strong>{count}</strong> compte{plural} correspondant à \"<strong>{query}</strong>\"",
+      "notFound": "Aucun compte trouvé correspondant à \"<strong>{query}</strong>\""
+    },
+    "empty": {
+      "searchNoResults": "Aucun compte correspondant à \"{query}\" trouvé dans cette catégorie.",
+      "mutual": "Aucun abonnement mutuel trouvé.",
+      "youFollow": "Toutes les personnes que vous suivez vous suivent en retour !",
+      "theyFollow": "Vous suivez toutes les personnes qui vous suivent !",
+      "closeFriends": "Aucune donnée d'amis proches disponible.",
+      "pending": "Aucune demande de suivi en attente.",
+      "recentRequests": "Aucune demande de suivi récente.",
+      "unfollowed": "Aucun compte récemment désabonné."
+    },
+    "user": {
+      "since": "Depuis le {date}",
+      "view": "Voir"
+    },
+    "share": {
+      "title": "Analyse de suivi Instagram",
+      "text": "📊 Mon analyse de suivi Instagram :\n\n👥 Abonnements mutuels : {mutualCount}\n➡️ Je suis (pas de retour) : {youFollowCount}\n⬅️ Me suivent (je ne suis pas) : {theyFollowCount}\n\nAnalysez vos connexions sur : {url}",
+      "copied": "Résumé de l'analyse copié dans le presse-papiers !"
+    }
+  },
+  "footer": {
+    "madeWith": {
+      "prefix": "Fait avec",
+      "suffix": "pour les utilisateurs Instagram qui veulent comprendre leurs connexions"
+    },
+    "description": "Ce projet est open source et respecte les conditions d'utilisation de Meta.<br />Vos données sont traitées localement et ne quittent jamais votre navigateur.",
+    "proudlyCreatedBy": "Fièrement créé par"
+  }
+}

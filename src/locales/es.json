@@ -1,0 +1,139 @@
+{
+  "app": {
+    "title": "InstaFollow Comparator"
+  },
+  "navigation": {
+    "viewOnGithub": "Ver en GitHub"
+  },
+  "urls": {
+    "github": "https://github.com/Synapsr/InstaFollowComparator"
+  },
+  "home": {
+    "hero": {
+      "title": "Descubre tus relaciones de",
+      "titleHighlight": "Instagram",
+      "subtitle": "La única forma segura de analizar tus relaciones de Instagram. Sin scraping, sin riesgos de cuenta, sin herramientas rotas. Simplemente sube la exportación oficial de datos de Meta para descubrir instantáneamente tus relaciones de seguimiento."
+    },
+    "upload": {
+      "title": "Sube tus datos de Instagram",
+      "subtitle": "Selecciona el archivo ZIP que descargaste de la función de exportación de datos de Instagram.",
+      "buttonUpload": "Elegir archivo ZIP",
+      "buttonProcessing": "Procesando...",
+      "exampleData": "O prueba con datos de ejemplo",
+      "messages": {
+        "loadingExample": "Cargando datos de ejemplo...",
+        "processingExample": "Procesando datos de Instagram de ejemplo...",
+        "processing": "Procesando tus datos de Instagram...",
+        "complete": "¡Análisis completado! Redirigiendo...",
+        "exampleComplete": "¡Análisis de ejemplo completado! Redirigiendo..."
+      },
+      "errors": {
+        "invalidFile": "Por favor selecciona un archivo ZIP válido",
+        "exampleFailed": "Error al cargar datos de ejemplo",
+        "processingFailed": "Error al procesar el archivo"
+      }
+    },
+    "features": {
+      "security": {
+        "title": "100% Limpio y Seguro",
+        "description": "<strong>Sin scraping, sin baneos, sin aplicaciones rotas.</strong> Utiliza únicamente la exportación oficial de datos de Meta. Tus datos permanecen en tu navegador."
+      },
+      "speed": {
+        "title": "Súper Rápido",
+        "description": "Obtén resultados instantáneos con nuestros algoritmos optimizados de procesamiento de datos."
+      },
+      "analysis": {
+        "title": "Análisis Detallado",
+        "description": "Ve seguidores mutuos, relaciones unidireccionales y estadísticas completas."
+      }
+    },
+    "howTo": {
+      "title": "Cómo exportar tus datos de Instagram",
+      "steps": {
+        "step1": {
+          "title": "Ve al Centro de Cuentas",
+          "description": "Visita"
+        },
+        "step2": {
+          "title": "Crear exportación",
+          "description": "Selecciona tu cuenta de Instagram → Elige \"Descargar al dispositivo\""
+        },
+        "step3": {
+          "title": "Personalizar información",
+          "description": "Desmarcar todo → Marcar solo <strong>Contactos → Seguidores y Siguiendo</strong> → Guardar"
+        },
+        "step4": {
+          "title": "Establecer período y formato",
+          "description": "Período: \"Todo el tiempo\" → <strong>Formato: JSON</strong> → Iniciar exportación"
+        }
+      },
+      "tip": "<strong>⚡ Exportación rápida:</strong> Con solo los datos de seguidores seleccionados, ¡tu exportación estará lista en <strong>menos de un minuto</strong>! Recibirás inmediatamente un email con el enlace de descarga."
+    }
+  },
+  "results": {
+    "loading": "Cargando resultados...",
+    "noResults": "No se encontraron resultados. Por favor sube primero tus datos de Instagram.",
+    "goBackHome": "Volver al Inicio",
+    "backToHome": "Volver al Inicio",
+    "shareButton": "Compartir",
+    "exportButton": "Exportar",
+    "title": "Tu análisis de seguimiento de Instagram",
+    "stats": {
+      "totalFollowers": "Total de Seguidores",
+      "totalFollowing": "Total Siguiendo",
+      "mutualFollows": "Seguidores Mutuos",
+      "followBackRate": "Tasa de Seguimiento de Vuelta"
+    },
+    "tabs": {
+      "mutual": "Seguidores Mutuos",
+      "youFollow": "No Te Siguen",
+      "theyFollow": "Tus Seguidores",
+      "closeFriends": "Amigos Cercanos",
+      "pending": "Solicitudes Pendientes",
+      "recentRequests": "Solicitudes Recientes",
+      "unfollowed": "Recientemente No Seguidos"
+    },
+    "descriptions": {
+      "mutual": "Personas que te siguen y que tú sigues de vuelta",
+      "youFollow": "Personas que sigues pero que no te siguen de vuelta",
+      "theyFollow": "Personas que te siguen pero que tú no sigues de vuelta",
+      "closeFriends": "Usuarios que has añadido a tu lista de amigos cercanos",
+      "pending": "Solicitudes de seguimiento que has enviado y que aún están pendientes",
+      "recentRequests": "Solicitudes de seguimiento recientes recibidas de otros usuarios",
+      "unfollowed": "Cuentas a las que has dejado de seguir recientemente"
+    },
+    "search": {
+      "placeholder": "Buscar cuentas...",
+      "clearSearch": "Limpiar búsqueda (Esc)",
+      "found": "Encontrado <strong>{count}</strong> cuenta{plural} que coincide con \"<strong>{query}</strong>\"",
+      "notFound": "No se encontraron cuentas que coincidan con \"<strong>{query}</strong>\""
+    },
+    "empty": {
+      "searchNoResults": "No se encontraron cuentas que coincidan con \"{query}\" en esta categoría.",
+      "mutual": "No se encontraron seguidores mutuos.",
+      "youFollow": "¡Todos los que sigues te siguen de vuelta!",
+      "theyFollow": "¡Sigues a todos los que te siguen!",
+      "closeFriends": "No hay datos de amigos cercanos disponibles.",
+      "pending": "No hay solicitudes de seguimiento pendientes.",
+      "recentRequests": "No hay solicitudes de seguimiento recientes.",
+      "unfollowed": "No hay cuentas recientemente no seguidas."
+    },
+    "user": {
+      "since": "Desde {date}",
+      "view": "Ver"
+    },
+    "share": {
+      "title": "Análisis de Seguimiento de Instagram",
+      "text": "📊 Mi Análisis de Seguimiento de Instagram:\n\n👥 Seguidores Mutuos: {mutualCount}\n➡️ Sigo (No Me Siguen): {youFollowCount}\n⬅️ Me Siguen (No Sigo): {theyFollowCount}\n\nAnaliza tus conexiones en: {url}",
+      "copied": "¡Resumen del análisis copiado al portapapeles!"
+    }
+  },
+  "footer": {
+    "madeWith": {
+      "prefix": "Hecho con",
+      "suffix": "para usuarios de Instagram que quieren entender sus conexiones"
+    },
+    "description": "Este proyecto es código abierto y respeta los Términos de Servicio de Meta.<br />Tus datos se procesan localmente y nunca salen de tu navegador.",
+    "proudlyCreatedBy": "Creado con orgullo por"
+  }
+}

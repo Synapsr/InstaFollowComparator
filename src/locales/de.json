@@ -1,0 +1,139 @@
+{
+  "app": {
+    "title": "InstaFollow Comparator"
+  },
+  "navigation": {
+    "viewOnGithub": "Auf GitHub ansehen"
+  },
+  "urls": {
+    "github": "https://github.com/Synapsr/InstaFollowComparator"
+  },
+  "home": {
+    "hero": {
+      "title": "Entdecke deine Instagram",
+      "titleHighlight": "Follow-Beziehungen",
+      "subtitle": "Der einzige sichere Weg, deine Instagram-Beziehungen zu analysieren. Kein Scraping, keine Account-Risiken, keine kaputten Tools. Lade einfach Metas offiziellen Datenexport hoch, um deine Follow-Beziehungen sofort zu entdecken."
+    },
+    "upload": {
+      "title": "Lade deine Instagram-Daten hoch",
+      "subtitle": "Wähle die ZIP-Datei aus, die du von Instagrams Datenexport-Funktion heruntergeladen hast.",
+      "buttonUpload": "ZIP-Datei auswählen",
+      "buttonProcessing": "Wird verarbeitet...",
+      "exampleData": "Oder versuche es mit Beispieldaten",
+      "messages": {
+        "loadingExample": "Lade Beispieldaten...",
+        "processingExample": "Verarbeite Instagram-Beispieldaten...",
+        "processing": "Verarbeite deine Instagram-Daten...",
+        "complete": "Analyse abgeschlossen! Weiterleitung...",
+        "exampleComplete": "Beispielanalyse abgeschlossen! Weiterleitung..."
+      },
+      "errors": {
+        "invalidFile": "Bitte wähle eine gültige ZIP-Datei aus",
+        "exampleFailed": "Laden der Beispieldaten fehlgeschlagen",
+        "processingFailed": "Verarbeitung der Datei fehlgeschlagen"
+      }
+    },
+    "features": {
+      "security": {
+        "title": "100% Sauber und Sicher",
+        "description": "<strong>Kein Scraping, keine Sperren, keine kaputten Apps.</strong> Verwendet nur Metas offiziellen Datenexport. Deine Daten bleiben in deinem Browser."
+      },
+      "speed": {
+        "title": "Blitzschnell",
+        "description": "Erhalte sofortige Ergebnisse mit unseren optimierten Datenverarbeitungsalgorithmen."
+      },
+      "analysis": {
+        "title": "Detaillierte Analyse",
+        "description": "Sieh gegenseitige Follows, einseitige Beziehungen und umfassende Statistiken."
+      }
+    },
+    "howTo": {
+      "title": "So exportierst du deine Instagram-Daten",
+      "steps": {
+        "step1": {
+          "title": "Gehe zum Konten-Center",
+          "description": "Besuche"
+        },
+        "step2": {
+          "title": "Export erstellen",
+          "description": "Wähle dein Instagram-Konto → Wähle \"Auf Gerät herunterladen\""
+        },
+        "step3": {
+          "title": "Informationen anpassen",
+          "description": "Alle abwählen → Nur <strong>Kontakte → Follower und Folge ich</strong> auswählen → Speichern"
+        },
+        "step4": {
+          "title": "Zeitraum und Format festlegen",
+          "description": "Zeitraum: \"Alle Zeit\" → <strong>Format: JSON</strong> → Export starten"
+        }
+      },
+      "tip": "<strong>⚡ Schneller Export:</strong> Mit nur ausgewählten Follower-Daten ist dein Export in <strong>weniger als einer Minute</strong> bereit! Du erhältst sofort eine E-Mail mit dem Download-Link."
+    }
+  },
+  "results": {
+    "loading": "Lade Ergebnisse...",
+    "noResults": "Keine Ergebnisse gefunden. Bitte lade zuerst deine Instagram-Daten hoch.",
+    "goBackHome": "Zurück zur Startseite",
+    "backToHome": "Zurück zur Startseite",
+    "shareButton": "Teilen",
+    "exportButton": "Exportieren",
+    "title": "Deine Instagram-Follow-Analyse",
+    "stats": {
+      "totalFollowers": "Gesamt Follower",
+      "totalFollowing": "Gesamt Folge ich",
+      "mutualFollows": "Gegenseitige Follows",
+      "followBackRate": "Zurückfolgen-Rate"
+    },
+    "tabs": {
+      "mutual": "Gegenseitige Follows",
+      "youFollow": "Folgen nicht zurück",
+      "theyFollow": "Deine Follower",
+      "closeFriends": "Enge Freunde",
+      "pending": "Ausstehende Anfragen",
+      "recentRequests": "Aktuelle Anfragen",
+      "unfollowed": "Kürzlich entfolgt"
+    },
+    "descriptions": {
+      "mutual": "Personen, die dir folgen und denen du zurückfolgst",
+      "youFollow": "Personen, denen du folgst, aber die dir nicht zurückfolgen",
+      "theyFollow": "Personen, die dir folgen, aber denen du nicht zurückfolgst",
+      "closeFriends": "Benutzer, die du zu deiner Liste enger Freunde hinzugefügt hast",
+      "pending": "Follow-Anfragen, die du gesendet hast und die noch ausstehen",
+      "recentRequests": "Aktuelle Follow-Anfragen von anderen Benutzern",
+      "unfollowed": "Konten, denen du kürzlich entfolgt bist"
+    },
+    "search": {
+      "placeholder": "Konten suchen...",
+      "clearSearch": "Suche löschen (Esc)",
+      "found": "<strong>{count}</strong> Konto{plural} gefunden, das \"<strong>{query}</strong>\" entspricht",
+      "notFound": "Keine Konten gefunden, die \"<strong>{query}</strong>\" entsprechen"
+    },
+    "empty": {
+      "searchNoResults": "Keine Konten gefunden, die \"{query}\" in dieser Kategorie entsprechen.",
+      "mutual": "Keine gegenseitigen Follows gefunden.",
+      "youFollow": "Alle, denen du folgst, folgen dir zurück!",
+      "theyFollow": "Du folgst allen, die dir folgen!",
+      "closeFriends": "Keine Daten zu engen Freunden verfügbar.",
+      "pending": "Keine ausstehenden Follow-Anfragen.",
+      "recentRequests": "Keine aktuellen Follow-Anfragen.",
+      "unfollowed": "Keine kürzlich entfolgten Konten."
+    },
+    "user": {
+      "since": "Seit {date}",
+      "view": "Anzeigen"
+    },
+    "share": {
+      "title": "Instagram-Follow-Analyse",
+      "text": "📊 Meine Instagram-Follow-Analyse:\n\n👥 Gegenseitige Follows: {mutualCount}\n➡️ Ich folge (kein Zurückfolgen): {youFollowCount}\n⬅️ Sie folgen mir (ich folge nicht): {theyFollowCount}\n\nAnalysiere deine Verbindungen unter: {url}",
+      "copied": "Analyse-Zusammenfassung in die Zwischenablage kopiert!"
+    }
+  },
+  "footer": {
+    "madeWith": {
+      "prefix": "Gemacht mit",
+      "suffix": "für Instagram-Nutzer, die ihre Verbindungen verstehen möchten"
+    },
+    "description": "Dieses Projekt ist Open Source und respektiert Metas Nutzungsbedingungen.<br />Deine Daten werden lokal verarbeitet und verlassen nie deinen Browser.",
+    "proudlyCreatedBy": "Stolz erstellt von"
+  }
+}
