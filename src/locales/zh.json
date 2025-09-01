@@ -14,6 +14,11 @@
       "titleHighlight": "关注关系",
       "subtitle": "分析您的Instagram关系的唯一安全方法。无爬取，无账户风险，无损坏工具。只需上传Meta的官方数据导出即可立即发现您的关注关系。"
     },
+    "video": {
+      "title": "观看操作演示",
+      "description": "观看此快速指南，了解如何导出您的Instagram数据并分析您的关系。",
+      "browserNotSupported": "您的浏览器不支持视频标签。"
+    },
     "upload": {
       "title": "上传您的Instagram数据",
       "subtitle": "选择您从Instagram数据导出功能下载的ZIP文件。",

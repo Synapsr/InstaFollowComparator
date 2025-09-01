@@ -14,6 +14,11 @@
       "titleHighlight": "Follow Relationships",
       "subtitle": "The only safe way to analyze your Instagram relationships. No scraping, no account risks, no broken tools. Simply upload Meta's official data export to discover your follow relationships instantly."
     },
+    "video": {
+      "title": "See How It Works",
+      "description": "Watch this quick guide to learn how to export your Instagram data and analyze your relationships.",
+      "browserNotSupported": "Your browser does not support the video tag."
+    },
     "upload": {
       "title": "Upload Your Instagram Data",
       "subtitle": "Select the ZIP file you downloaded from Instagram's data export feature.",

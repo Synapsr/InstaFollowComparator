@@ -145,6 +145,37 @@ export default function HomePage() {
             </p>
           </div>
 
+          {/* How-to Video Section */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                {t('home.video.title')}
+              </h3>
+              <p className="text-lg text-gray-600 max-w-xl mx-auto">
+                {t('home.video.description')}
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+                <video 
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  muted 
+                  loop
+                  playsInline
+                >
+                  <source src="/how-to.mp4" type="video/mp4" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                    <p className="text-white text-lg">
+                      {t('home.video.browserNotSupported')}
+                    </p>
+                  </div>
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
           {/* Upload Section */}
           <div className="card max-w-2xl mx-auto text-center mb-16">
             <div className="mb-8">

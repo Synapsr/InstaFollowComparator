@@ -117,7 +117,21 @@ export function compareFollowData(followers: InstagramUser[], following: Instagr
 
 export async function processInstagramZip(file: File): Promise<ComparisonResult> {
   try {
-    const zip = await JSZip.loadAsync(file)
+    // Validate file size and type
+    if (file.size === 0) {
+      throw new Error('The uploaded file is empty')
+    }
+    
+    if (file.size > 50 * 1024 * 1024) { // 50MB limit
+      throw new Error('File size too large. Please upload a file smaller than 50MB.')
+    }
+
+    // Load the ZIP file with additional options for better error handling
+    const zip = await JSZip.loadAsync(file, {
+      checkCRC32: true,
+      optimizedBinaryString: false,
+      createFolders: false
+    })
     
     let followersData: FollowersData | null = null
     let followingData: FollowingData | null = null
@@ -126,9 +140,22 @@ export async function processInstagramZip(file: File): Promise<ComparisonResult>
     let recentFollowRequestsData: RecentFollowRequestsData | null = null
     let recentlyUnfollowedData: RecentlyUnfollowedData | null = null
     
-    const connectionsFolder = zip.folder('connections/followers_and_following')
+    // Try to find the connections folder (could be at root or nested)
+    let connectionsFolder = zip.folder('connections/followers_and_following')
+    
+    // If not found, try to find it in any subfolder
     if (!connectionsFolder) {
-      throw new Error('Invalid Instagram data: connections/followers_and_following folder not found')
+      const allFolders = Object.keys(zip.files)
+        .filter(name => name.includes('connections/followers_and_following/'))
+        .map(name => name.substring(0, name.indexOf('connections/followers_and_following/') + 'connections/followers_and_following'.length))
+      
+      if (allFolders.length > 0) {
+        connectionsFolder = zip.folder(allFolders[0])
+      }
+    }
+    
+    if (!connectionsFolder) {
+      throw new Error('Invalid Instagram data: connections/followers_and_following folder not found. Please ensure you uploaded a valid Instagram data export.')
     }
     
     // Parse required files
@@ -213,6 +240,24 @@ export async function processInstagramZip(file: File): Promise<ComparisonResult>
     return result
   } catch (error) {
     console.error('Error processing Instagram ZIP:', error)
-    throw new Error(`Failed to process Instagram data: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    
+    if (error instanceof Error) {
+      // Handle specific ZIP-related errors
+      if (error.message.includes('end of central directory')) {
+        throw new Error('The uploaded file appears to be corrupted or is not a valid ZIP file. Please try re-downloading your Instagram data and uploading again.')
+      }
+      
+      if (error.message.includes('corrupted')) {
+        throw new Error('The ZIP file is corrupted. Please re-download your Instagram data from Instagram.')
+      }
+      
+      if (error.message.includes('not a zip')) {
+        throw new Error('The uploaded file is not a valid ZIP file. Please make sure to upload the ZIP file you downloaded from Instagram.')
+      }
+      
+      throw new Error(`Failed to process Instagram data: ${error.message}`)
+    }
+    
+    throw new Error('Failed to process Instagram data: Unknown error occurred')
   }
 }
