@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ErrorBoundary from '../components/ErrorBoundary'
 import { I18nProvider } from '../contexts/I18nContext'
+import Analytics from '../components/Analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Analytics />
         <I18nProvider>
           <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-orange-50">
             <ErrorBoundary>

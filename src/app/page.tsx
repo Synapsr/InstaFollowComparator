@@ -1,12 +1,61 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { Upload, FileText, Shield, Zap, Github, Heart } from 'lucide-react'
+import { Upload, FileText, Shield, Zap, Github, Heart, RotateCcw } from 'lucide-react'
 import { processInstagramZip } from '../lib/instagram-parser'
 import { ComparisonResult, UploadStatus } from '../types/instagram'
 import { useTranslation } from '../contexts/I18nContext'
 import LanguageSwitcher from '../components/LanguageSwitcher'
+
+interface VideoPlayerProps {
+  src: string
+  className?: string
+  containerClassName?: string
+  fallbackText: string
+}
+
+function VideoPlayer({ src, className = '', containerClassName = '', fallbackText }: VideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  
+  const restartVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0
+      videoRef.current.play()
+    }
+  }
+  
+  return (
+    <div className={`relative group ${containerClassName}`}>
+      <video 
+        ref={videoRef}
+        className={`w-full h-full object-cover ${className}`}
+        autoPlay 
+        muted 
+        loop
+        playsInline
+      >
+        <source src={src} type="video/mp4" />
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+          <p className="text-white text-sm">
+            {fallbackText}
+          </p>
+        </div>
+      </video>
+      
+      {/* Restart Button */}
+      <button
+        onClick={restartVideo}
+        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+        title="Restart video"
+      >
+        <RotateCcw className="w-4 h-4" />
+      </button>
+      
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+    </div>
+  )
+}
 
 export default function HomePage() {
   const router = useRouter()
@@ -28,7 +77,18 @@ export default function HomePage() {
     try {
       // Fetch the example ZIP file
       const response = await fetch('/example-instagram-data.zip')
+      
+      if (!response.ok) {
+        throw new Error(`Failed to load example data: ${response.status} ${response.statusText}`)
+      }
+      
       const blob = await response.blob()
+      
+      // Verify we got a proper zip file
+      if (blob.size === 0) {
+        throw new Error('Example data file is empty')
+      }
+      
       const file = new File([blob], 'example-instagram-data.zip', { type: 'application/zip' })
       
       setUploadStatus({
@@ -156,36 +216,24 @@ export default function HomePage() {
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                <video 
-                  className="w-full h-full object-cover"
-                  autoPlay 
-                  muted 
-                  loop
-                  playsInline
-                >
-                  <source src="/demo.mp4" type="video/mp4" />
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-                    <p className="text-white text-lg">
-                      {t('home.demo.browserNotSupported')}
-                    </p>
-                  </div>
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-              </div>
+              <VideoPlayer
+                src="/demo.mp4"
+                containerClassName="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900"
+                fallbackText={t('home.demo.browserNotSupported')}
+              />
             </div>
           </div>
 
           {/* Upload Section */}
-          <div className="card max-w-2xl mx-auto text-center mb-16">
+          <div className="card max-w-2xl mx-auto text-center mb-16 group hover:shadow-2xl transition-all duration-500">
             <div className="mb-8">
-              <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Upload className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-primary-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-primary-500/25">
+                <Upload className="w-10 h-10 text-white group-hover:animate-bounce" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
                 {t('home.upload.title')}
               </h3>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-8 group-hover:text-gray-700 transition-colors duration-300">
                 {t('home.upload.subtitle')}
               </p>
             </div>
@@ -201,11 +249,19 @@ export default function HomePage() {
               />
               <label
                 htmlFor="file-upload"
-                className={`btn-primary w-full cursor-pointer inline-block ${
-                  uploadStatus.isUploading ? 'opacity-50 cursor-not-allowed' : ''
+                className={`btn-primary w-full cursor-pointer inline-block transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
+                  uploadStatus.isUploading ? 'opacity-50 cursor-not-allowed animate-pulse' : 'hover:bg-gradient-to-r hover:from-primary-600 hover:to-primary-400'
                 }`}
               >
-{uploadStatus.isUploading ? t('home.upload.buttonProcessing') : t('home.upload.buttonUpload')}
+                <span className={uploadStatus.isUploading ? 'inline-flex items-center space-x-2' : ''}>
+                  {uploadStatus.isUploading && (
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  )}
+                  {uploadStatus.isUploading ? t('home.upload.buttonProcessing') : t('home.upload.buttonUpload')}
+                </span>
               </label>
             </div>
 
@@ -214,11 +270,11 @@ export default function HomePage() {
               <button
                 onClick={handleExampleData}
                 disabled={uploadStatus.isUploading}
-                className={`text-sm text-gray-500 hover:text-primary-500 underline transition-colors ${
-                  uploadStatus.isUploading ? 'opacity-50 cursor-not-allowed' : ''
+                className={`text-sm text-gray-500 hover:text-primary-500 underline transition-all duration-200 hover:scale-105 ${
+                  uploadStatus.isUploading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-50 hover:px-2 hover:py-1 hover:rounded hover:no-underline'
                 }`}
               >
-{t('home.upload.exampleData')}
+                {t('home.upload.exampleData')}
               </button>
             </div>
 
@@ -329,23 +385,11 @@ export default function HomePage() {
               <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">
                 {t('home.howTo.video.title')}
               </h4>
-              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-900">
-                <video 
-                  className="w-full h-full object-cover"
-                  autoPlay 
-                  muted 
-                  loop
-                  playsInline
-                >
-                  <source src="/how-to.mp4" type="video/mp4" />
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-                    <p className="text-white text-sm">
-                      {t('home.howTo.video.browserNotSupported')}
-                    </p>
-                  </div>
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
-              </div>
+              <VideoPlayer
+                src="/how-to.mp4"
+                containerClassName="aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-900"
+                fallbackText={t('home.howTo.video.browserNotSupported')}
+              />
             </div>
           </div>
         </div>
