@@ -14,9 +14,9 @@
       "titleHighlight": "Instagram",
       "subtitle": "La única forma segura de analizar tus relaciones de Instagram. Sin scraping, sin riesgos de cuenta, sin herramientas rotas. Simplemente sube la exportación oficial de datos de Meta para descubrir instantáneamente tus relaciones de seguimiento."
     },
-    "video": {
-      "title": "Mira Cómo Funciona",
-      "description": "Ve esta guía rápida para aprender cómo exportar tus datos de Instagram y analizar tus relaciones.",
+    "demo": {
+      "title": "Míralo En Acción",
+      "description": "Observa cómo nuestra herramienta analiza las relaciones de Instagram en tiempo real y descubre qué insights puedes obtener.",
       "browserNotSupported": "Tu navegador no soporta la etiqueta de video."
     },
     "upload": {
@@ -72,7 +72,11 @@
           "description": "Período: \"Todo el tiempo\" → <strong>Formato: JSON</strong> → Iniciar exportación"
         }
       },
-      "tip": "<strong>⚡ Exportación rápida:</strong> Con solo los datos de seguidores seleccionados, ¡tu exportación estará lista en <strong>menos de un minuto</strong>! Recibirás inmediatamente un email con el enlace de descarga."
+      "tip": "<strong>⚡ Exportación rápida:</strong> Con solo los datos de seguidores seleccionados, ¡tu exportación estará lista en <strong>menos de un minuto</strong>! Recibirás inmediatamente un email con el enlace de descarga.",
+      "video": {
+        "title": "Guía de Video Paso a Paso",
+        "browserNotSupported": "Tu navegador no soporta la etiqueta de video."
+      }
     }
   },
   "results": {

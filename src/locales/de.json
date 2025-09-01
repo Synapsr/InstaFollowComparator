@@ -14,9 +14,9 @@
       "titleHighlight": "Follow-Beziehungen",
       "subtitle": "Der einzige sichere Weg, deine Instagram-Beziehungen zu analysieren. Kein Scraping, keine Account-Risiken, keine kaputten Tools. Lade einfach Metas offiziellen Datenexport hoch, um deine Follow-Beziehungen sofort zu entdecken."
     },
-    "video": {
-      "title": "So Funktioniert Es",
-      "description": "Schaue dir diese kurze Anleitung an, um zu lernen, wie du deine Instagram-Daten exportierst und deine Beziehungen analysierst.",
+    "demo": {
+      "title": "Sieh Es In Aktion",
+      "description": "Schaue unserem Tool dabei zu, wie es Instagram-Beziehungen in Echtzeit analysiert und entdecke, welche Erkenntnisse du gewinnen kannst.",
       "browserNotSupported": "Dein Browser unterstützt das Video-Tag nicht."
     },
     "upload": {
@@ -72,7 +72,11 @@
           "description": "Zeitraum: \"Alle Zeit\" → <strong>Format: JSON</strong> → Export starten"
         }
       },
-      "tip": "<strong>⚡ Schneller Export:</strong> Mit nur ausgewählten Follower-Daten ist dein Export in <strong>weniger als einer Minute</strong> bereit! Du erhältst sofort eine E-Mail mit dem Download-Link."
+      "tip": "<strong>⚡ Schneller Export:</strong> Mit nur ausgewählten Follower-Daten ist dein Export in <strong>weniger als einer Minute</strong> bereit! Du erhältst sofort eine E-Mail mit dem Download-Link.",
+      "video": {
+        "title": "Schritt-für-Schritt Video-Anleitung",
+        "browserNotSupported": "Dein Browser unterstützt das Video-Tag nicht."
+      }
     }
   },
   "results": {

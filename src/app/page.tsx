@@ -145,14 +145,14 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* How-to Video Section */}
+          {/* Demo Video Section */}
           <div className="mb-16">
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                {t('home.video.title')}
+                {t('home.demo.title')}
               </h3>
               <p className="text-lg text-gray-600 max-w-xl mx-auto">
-                {t('home.video.description')}
+                {t('home.demo.description')}
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
@@ -164,10 +164,10 @@ export default function HomePage() {
                   loop
                   playsInline
                 >
-                  <source src="/how-to.mp4" type="video/mp4" />
+                  <source src="/demo.mp4" type="video/mp4" />
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
                     <p className="text-white text-lg">
-                      {t('home.video.browserNotSupported')}
+                      {t('home.demo.browserNotSupported')}
                     </p>
                   </div>
                 </video>
@@ -322,6 +322,30 @@ export default function HomePage() {
             <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-xl">
               <p className="text-green-800 text-sm" dangerouslySetInnerHTML={{ __html: t('home.howTo.tip') }}>
               </p>
+            </div>
+
+            {/* How-to Video */}
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+                {t('home.howTo.video.title')}
+              </h4>
+              <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-900">
+                <video 
+                  className="w-full h-full object-cover"
+                  autoPlay 
+                  muted 
+                  loop
+                  playsInline
+                >
+                  <source src="/how-to.mp4" type="video/mp4" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                    <p className="text-white text-sm">
+                      {t('home.howTo.video.browserNotSupported')}
+                    </p>
+                  </div>
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+              </div>
             </div>
           </div>
         </div>
