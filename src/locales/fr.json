@@ -93,6 +93,28 @@
       "mutualFollows": "Abonnements mutuels",
       "followBackRate": "Taux de retour d'abonnement"
     },
+    "badge": {
+      "youFollow": "Vous suivez",
+      "mutual": "Mutuel",
+      "theyFollow": "Vous suit"
+    },
+    "columns": {
+      "youFollow": {
+        "title": "Vous suivez (pas en retour)",
+        "description": "Comptes que vous suivez mais qui ne vous suivent pas en retour"
+      },
+      "mutual": {
+        "title": "Abonnements mutuels",
+        "description": "Comptes avec des relations d'abonnement mutuel"
+      },
+      "theyFollow": {
+        "title": "Vos abonnés",
+        "description": "Comptes qui vous suivent mais que vous ne suivez pas en retour"
+      }
+    },
+    "optionalData": {
+      "title": "Données supplémentaires"
+    },
     "tabs": {
       "mutual": "Abonnements mutuels",
       "youFollow": "Ne vous suivent pas",

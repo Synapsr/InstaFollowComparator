@@ -93,6 +93,28 @@
       "mutualFollows": "Mutual Follows",
       "followBackRate": "Follow Back Rate"
     },
+    "badge": {
+      "youFollow": "You follow",
+      "mutual": "Mutual",
+      "theyFollow": "Follows you"
+    },
+    "columns": {
+      "youFollow": {
+        "title": "You Follow (Not Back)",
+        "description": "Accounts you follow that don't follow you back"
+      },
+      "mutual": {
+        "title": "Mutual Follows",
+        "description": "Accounts with mutual follow relationships"
+      },
+      "theyFollow": {
+        "title": "Your Followers",
+        "description": "Accounts that follow you but you don't follow back"
+      }
+    },
+    "optionalData": {
+      "title": "Additional Data"
+    },
     "tabs": {
       "mutual": "Mutual Follows",
       "youFollow": "Don't Follow Back",

@@ -93,6 +93,28 @@
       "mutualFollows": "Seguidores Mutuos",
       "followBackRate": "Tasa de Seguimiento de Vuelta"
     },
+    "badge": {
+      "youFollow": "Tú sigues",
+      "mutual": "Mutuo",
+      "theyFollow": "Te sigue"
+    },
+    "columns": {
+      "youFollow": {
+        "title": "Tú sigues (no te siguen)",
+        "description": "Cuentas que sigues pero que no te siguen de vuelta"
+      },
+      "mutual": {
+        "title": "Seguidores mutuos",
+        "description": "Cuentas con relaciones de seguimiento mutuo"
+      },
+      "theyFollow": {
+        "title": "Tus seguidores",
+        "description": "Cuentas que te siguen pero que tú no sigues de vuelta"
+      }
+    },
+    "optionalData": {
+      "title": "Datos adicionales"
+    },
     "tabs": {
       "mutual": "Seguidores Mutuos",
       "youFollow": "No Te Siguen",

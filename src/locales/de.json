@@ -93,6 +93,28 @@
       "mutualFollows": "Gegenseitige Follows",
       "followBackRate": "Zurückfolgen-Rate"
     },
+    "badge": {
+      "youFollow": "Du folgst",
+      "mutual": "Gegenseitig",
+      "theyFollow": "Folgt dir"
+    },
+    "columns": {
+      "youFollow": {
+        "title": "Du folgst (nicht zurück)",
+        "description": "Konten, denen du folgst, die dir aber nicht zurückfolgen"
+      },
+      "mutual": {
+        "title": "Gegenseitige Follows",
+        "description": "Konten mit gegenseitigen Follow-Beziehungen"
+      },
+      "theyFollow": {
+        "title": "Deine Follower",
+        "description": "Konten, die dir folgen, aber denen du nicht zurückfolgst"
+      }
+    },
+    "optionalData": {
+      "title": "Zusätzliche Daten"
+    },
     "tabs": {
       "mutual": "Gegenseitige Follows",
       "youFollow": "Folgen nicht zurück",

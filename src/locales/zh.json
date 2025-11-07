@@ -93,6 +93,28 @@
       "mutualFollows": "相互关注",
       "followBackRate": "回关率"
     },
+    "badge": {
+      "youFollow": "您关注",
+      "mutual": "相互",
+      "theyFollow": "关注您"
+    },
+    "columns": {
+      "youFollow": {
+        "title": "您关注（未回关）",
+        "description": "您关注但未回关您的账户"
+      },
+      "mutual": {
+        "title": "相互关注",
+        "description": "具有相互关注关系的账户"
+      },
+      "theyFollow": {
+        "title": "您的粉丝",
+        "description": "关注您但您未回关的账户"
+      }
+    },
+    "optionalData": {
+      "title": "附加数据"
+    },
     "tabs": {
       "mutual": "相互关注",
       "youFollow": "未回关",
