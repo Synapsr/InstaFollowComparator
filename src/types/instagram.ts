@@ -4,16 +4,29 @@ export interface InstagramUser {
   timestamp: number
 }
 
+// For following.json, string_list_data has a different structure (no 'value' field)
+export interface FollowingDataItem {
+  href: string
+  timestamp: number
+}
+
 export interface InstagramDataEntry {
   title: string
   media_list_data: unknown[]
   string_list_data: InstagramUser[]
 }
 
+// Following.json uses a different structure for its entries
+export interface FollowingDataEntry {
+  title: string
+  media_list_data?: unknown[]
+  string_list_data: FollowingDataItem[]
+}
+
 export type FollowersData = InstagramDataEntry[]
 
 export interface FollowingData {
-  relationships_following: InstagramDataEntry[]
+  relationships_following: FollowingDataEntry[]
 }
 
 export interface CloseFriendsData {

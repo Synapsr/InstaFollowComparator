@@ -1,5 +1,5 @@
 import JSZip from 'jszip'
-import { InstagramUser, FollowersData, FollowingData, ComparisonResult, CloseFriendsData, PendingFollowRequestsData, RecentFollowRequestsData, RecentlyUnfollowedData } from '../types/instagram'
+import { InstagramUser, FollowersData, FollowingData, FollowingDataItem, ComparisonResult, CloseFriendsData, PendingFollowRequestsData, RecentFollowRequestsData, RecentlyUnfollowedData } from '../types/instagram'
 
 export function parseFollowersData(followersData: FollowersData): InstagramUser[] {
   const allFollowers: InstagramUser[] = []
@@ -16,15 +16,24 @@ export function parseFollowersData(followersData: FollowersData): InstagramUser[
 
 export function parseFollowingData(followingData: FollowingData): InstagramUser[] {
   const allFollowing: InstagramUser[] = []
-  
+
   if (followingData.relationships_following && Array.isArray(followingData.relationships_following)) {
     followingData.relationships_following.forEach((entry) => {
-      if (entry.string_list_data) {
-        allFollowing.push(...entry.string_list_data)
+      if (entry.string_list_data && entry.string_list_data.length > 0) {
+        // Instagram's following.json has a different format:
+        // - The username is in the 'title' field of the parent object
+        // - The string_list_data contains href and timestamp, but NOT the 'value' field
+        // We need to reconstruct the InstagramUser object with the username from 'title'
+        const userData: FollowingDataItem = entry.string_list_data[0]
+        allFollowing.push({
+          href: userData.href,
+          value: entry.title, // Extract username from the parent 'title' field
+          timestamp: userData.timestamp
+        })
       }
     })
   }
-  
+
   return allFollowing
 }
 
