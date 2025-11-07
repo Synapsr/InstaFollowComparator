@@ -115,6 +115,14 @@
     "optionalData": {
       "title": "Datos adicionales"
     },
+    "sort": {
+      "newestFirst": "Más recientes primero",
+      "oldestFirst": "Más antiguos primero"
+    },
+    "fullscreen": {
+      "open": "Abrir en pantalla completa",
+      "close": "Cerrar pantalla completa"
+    },
     "tabs": {
       "mutual": "Seguidores Mutuos",
       "youFollow": "No Te Siguen",

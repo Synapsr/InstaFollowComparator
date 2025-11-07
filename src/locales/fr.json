@@ -115,6 +115,14 @@
     "optionalData": {
       "title": "Données supplémentaires"
     },
+    "sort": {
+      "newestFirst": "Plus récents en premier",
+      "oldestFirst": "Plus anciens en premier"
+    },
+    "fullscreen": {
+      "open": "Ouvrir en plein écran",
+      "close": "Fermer le plein écran"
+    },
     "tabs": {
       "mutual": "Abonnements mutuels",
       "youFollow": "Ne vous suivent pas",

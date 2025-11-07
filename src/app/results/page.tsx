@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, Users, UserPlus, UserMinus, Heart, ExternalLink, Download, Share2, ArrowRight, ArrowLeftRight, Search, X, UserCheck, Clock, UserX, Send } from 'lucide-react'
+import { ArrowLeft, Users, UserPlus, UserMinus, Heart, ExternalLink, Download, Share2, ArrowRight, ArrowLeftRight, Search, X, UserCheck, Clock, UserX, Send, ArrowUpDown, Maximize2 } from 'lucide-react'
 import { ComparisonResult, InstagramUser } from '../../types/instagram'
 import { useTranslation } from '../../contexts/I18nContext'
 import LanguageSwitcher from '../../components/LanguageSwitcher'
 
-type RelationshipType = 'youFollow' | 'mutual' | 'theyFollow'
+type RelationshipType = 'youFollow' | 'mutual' | 'theyFollow' | 'closeFriends' | 'pending' | 'recentRequests' | 'unfollowed'
+type SortOrder = 'desc' | 'asc'
 
 export default function ResultsPage() {
   const router = useRouter()
@@ -15,8 +16,20 @@ export default function ResultsPage() {
   const [results, setResults] = useState<ComparisonResult | null>(null)
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
-  const [showOptionalTabs, setShowOptionalTabs] = useState(false)
-  const [activeOptionalTab, setActiveOptionalTab] = useState<'closeFriends' | 'pending' | 'recentRequests' | 'unfollowed'>('closeFriends')
+
+  // Sort state for each column
+  const [sortOrders, setSortOrders] = useState<Record<RelationshipType, SortOrder>>({
+    youFollow: 'desc',
+    mutual: 'desc',
+    theyFollow: 'desc',
+    closeFriends: 'desc',
+    pending: 'desc',
+    recentRequests: 'desc',
+    unfollowed: 'desc'
+  })
+
+  // Fullscreen modal state
+  const [fullscreenColumn, setFullscreenColumn] = useState<RelationshipType | null>(null)
 
   useEffect(() => {
     const storedResults = sessionStorage.getItem('instagramComparison')
@@ -87,12 +100,29 @@ export default function ResultsPage() {
     })
   }
 
+  const sortUsers = (users: InstagramUser[], sortOrder: SortOrder): InstagramUser[] => {
+    return [...users].sort((a, b) => {
+      if (sortOrder === 'desc') {
+        return b.timestamp - a.timestamp // Most recent first
+      } else {
+        return a.timestamp - b.timestamp // Oldest first
+      }
+    })
+  }
+
   const filterUsers = (users: InstagramUser[], query: string): InstagramUser[] => {
     if (!query.trim()) return users
     const lowercaseQuery = query.toLowerCase()
     return users.filter(user =>
       user.value.toLowerCase().includes(lowercaseQuery)
     )
+  }
+
+  const toggleSortOrder = (type: RelationshipType) => {
+    setSortOrders(prev => ({
+      ...prev,
+      [type]: prev[type] === 'desc' ? 'asc' : 'desc'
+    }))
   }
 
   // Keyboard shortcuts
@@ -105,14 +135,18 @@ export default function ResultsPage() {
           searchInput.focus()
         }
       }
-      if (e.key === 'Escape' && searchQuery) {
-        setSearchQuery('')
+      if (e.key === 'Escape') {
+        if (fullscreenColumn) {
+          setFullscreenColumn(null)
+        } else if (searchQuery) {
+          setSearchQuery('')
+        }
       }
     }
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [searchQuery])
+  }, [searchQuery, fullscreenColumn])
 
   const HighlightedText = ({ text, highlight }: { text: string, highlight: string }) => {
     if (!highlight.trim()) {
@@ -146,7 +180,12 @@ export default function ResultsPage() {
     type: RelationshipType
     searchQuery: string
   }) => {
-    const config = {
+    const configMap: Record<RelationshipType, {
+      badge: string
+      badgeColor: string
+      icon: React.ReactNode
+      avatarGradient: string
+    }> = {
       youFollow: {
         badge: t('results.badge.youFollow'),
         badgeColor: 'bg-orange-100 text-orange-700 border-orange-200',
@@ -164,29 +203,53 @@ export default function ResultsPage() {
         badgeColor: 'bg-blue-100 text-blue-700 border-blue-200',
         icon: <ArrowLeft className="w-3 h-3" />,
         avatarGradient: 'from-blue-500 to-blue-300'
+      },
+      closeFriends: {
+        badge: t('results.tabs.closeFriends'),
+        badgeColor: 'bg-pink-100 text-pink-700 border-pink-200',
+        icon: <UserCheck className="w-3 h-3" />,
+        avatarGradient: 'from-pink-500 to-pink-300'
+      },
+      pending: {
+        badge: t('results.tabs.pending'),
+        badgeColor: 'bg-yellow-100 text-yellow-700 border-yellow-200',
+        icon: <Send className="w-3 h-3" />,
+        avatarGradient: 'from-yellow-500 to-yellow-300'
+      },
+      recentRequests: {
+        badge: t('results.tabs.recentRequests'),
+        badgeColor: 'bg-indigo-100 text-indigo-700 border-indigo-200',
+        icon: <Clock className="w-3 h-3" />,
+        avatarGradient: 'from-indigo-500 to-indigo-300'
+      },
+      unfollowed: {
+        badge: t('results.tabs.unfollowed'),
+        badgeColor: 'bg-gray-100 text-gray-700 border-gray-200',
+        icon: <UserX className="w-3 h-3" />,
+        avatarGradient: 'from-gray-500 to-gray-300'
       }
     }
 
-    const currentConfig = config[type]
+    const currentConfig = configMap[type]
 
     return (
-      <div className="p-4 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-all duration-200 group">
+      <div className="p-3.5 bg-white rounded-lg border border-gray-100 hover:border-gray-300 hover:shadow-md transition-all duration-200 group">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-start space-x-3 flex-1 min-w-0">
-            <div className={`w-10 h-10 bg-gradient-to-r ${currentConfig.avatarGradient} rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0 group-hover:scale-110 transition-transform`}>
+            <div className={`w-11 h-11 bg-gradient-to-br ${currentConfig.avatarGradient} rounded-full flex items-center justify-center text-white font-bold flex-shrink-0 group-hover:scale-105 transition-transform shadow-sm`}>
               {user.value.charAt(0).toUpperCase()}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <p className="font-medium text-gray-900 truncate">
+              <div className="flex items-center gap-2 mb-1.5">
+                <p className="font-semibold text-gray-900 truncate text-sm">
                   @<HighlightedText text={user.value} highlight={searchQuery} />
                 </p>
               </div>
-              <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium border ${currentConfig.badgeColor}`}>
+              <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${currentConfig.badgeColor} shadow-sm`}>
                 {currentConfig.icon}
                 <span>{currentConfig.badge}</span>
               </div>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-gray-500 mt-1.5">
                 {t('results.user.since', { date: formatDate(user.timestamp) })}
               </p>
             </div>
@@ -195,7 +258,7 @@ export default function ResultsPage() {
             href={user.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition-all flex-shrink-0"
+            className="flex items-center justify-center w-9 h-9 text-gray-400 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all flex-shrink-0 group-hover:scale-110"
             title={t('results.user.view')}
           >
             <ExternalLink className="w-4 h-4" />
@@ -213,7 +276,8 @@ export default function ResultsPage() {
     icon,
     emptyMessage,
     borderColor,
-    headerBg
+    headerBg,
+    isFullscreen = false
   }: {
     users: InstagramUser[]
     type: RelationshipType
@@ -223,25 +287,46 @@ export default function ResultsPage() {
     emptyMessage: string
     borderColor: string
     headerBg: string
+    isFullscreen?: boolean
   }) => {
-    const filteredUsers = filterUsers(users, searchQuery)
+    const sortOrder = sortOrders[type]
+    const sortedUsers = sortUsers(users, sortOrder)
+    const filteredUsers = filterUsers(sortedUsers, searchQuery)
 
     return (
-      <div className={`rounded-xl border-2 ${borderColor} bg-white overflow-hidden flex flex-col h-full`}>
+      <div className={`rounded-xl border ${borderColor} bg-white overflow-hidden flex flex-col ${isFullscreen ? 'h-full' : 'h-full'} shadow-sm hover:shadow-md transition-shadow`}>
         <div className={`${headerBg} px-4 py-3 border-b ${borderColor}`}>
-          <div className="flex items-center justify-between mb-1">
+          <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               {icon}
               <h3 className="font-semibold text-gray-900">{title}</h3>
             </div>
-            <span className="px-2 py-1 rounded-full bg-white/80 text-sm font-medium">
-              {searchQuery ? filteredUsers.length : users.length}
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-1 rounded-full bg-white/90 text-sm font-semibold shadow-sm">
+                {searchQuery ? filteredUsers.length : users.length}
+              </span>
+              <button
+                onClick={() => toggleSortOrder(type)}
+                className="p-1.5 hover:bg-white/60 rounded-lg transition-colors group"
+                title={sortOrder === 'desc' ? t('results.sort.newestFirst') : t('results.sort.oldestFirst')}
+              >
+                <ArrowUpDown className={`w-4 h-4 transition-transform ${sortOrder === 'asc' ? 'rotate-180' : ''}`} />
+              </button>
+              {!isFullscreen && (
+                <button
+                  onClick={() => setFullscreenColumn(type)}
+                  className="p-1.5 hover:bg-white/60 rounded-lg transition-colors"
+                  title={t('results.fullscreen.open')}
+                >
+                  <Maximize2 className="w-4 h-4" />
+                </button>
+              )}
+            </div>
           </div>
           <p className="text-xs text-gray-600">{description}</p>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-3 space-y-2 max-h-[600px]">
+        <div className={`flex-1 overflow-y-auto p-3 space-y-2 ${isFullscreen ? '' : 'max-h-[600px]'}`}>
           {filteredUsers.length === 0 ? (
             <div className="text-center py-12 text-gray-400">
               <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center">
@@ -438,114 +523,188 @@ export default function ResultsPage() {
             />
           </div>
 
-          {/* Optional Data Section */}
+          {/* Optional Data Section - Always Visible */}
           {hasOptionalData && (
-            <div className="mt-8">
-              <button
-                onClick={() => setShowOptionalTabs(!showOptionalTabs)}
-                className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 transition-colors"
-              >
-                <span>{showOptionalTabs ? '▼' : '▶'}</span>
-                <span>{t('results.optionalData.title')}</span>
-              </button>
-
-              {showOptionalTabs && (
-                <div className="card">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {results.closeFriends && results.closeFriends.length > 0 && (
-                      <button
-                        onClick={() => setActiveOptionalTab('closeFriends')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                          activeOptionalTab === 'closeFriends'
-                            ? 'bg-pink-100 text-pink-700 border-2 border-pink-200'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        <UserCheck className="w-4 h-4" />
-                        <span>{t('results.tabs.closeFriends')}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-white text-sm">
-                          {results.closeFriends.length}
-                        </span>
-                      </button>
-                    )}
-                    {results.pendingFollowRequests && results.pendingFollowRequests.length > 0 && (
-                      <button
-                        onClick={() => setActiveOptionalTab('pending')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                          activeOptionalTab === 'pending'
-                            ? 'bg-yellow-100 text-yellow-700 border-2 border-yellow-200'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        <Send className="w-4 h-4" />
-                        <span>{t('results.tabs.pending')}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-white text-sm">
-                          {results.pendingFollowRequests.length}
-                        </span>
-                      </button>
-                    )}
-                    {results.recentFollowRequests && results.recentFollowRequests.length > 0 && (
-                      <button
-                        onClick={() => setActiveOptionalTab('recentRequests')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                          activeOptionalTab === 'recentRequests'
-                            ? 'bg-indigo-100 text-indigo-700 border-2 border-indigo-200'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        <Clock className="w-4 h-4" />
-                        <span>{t('results.tabs.recentRequests')}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-white text-sm">
-                          {results.recentFollowRequests.length}
-                        </span>
-                      </button>
-                    )}
-                    {results.recentlyUnfollowed && results.recentlyUnfollowed.length > 0 && (
-                      <button
-                        onClick={() => setActiveOptionalTab('unfollowed')}
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                          activeOptionalTab === 'unfollowed'
-                            ? 'bg-gray-200 text-gray-700 border-2 border-gray-300'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
-                      >
-                        <UserX className="w-4 h-4" />
-                        <span>{t('results.tabs.unfollowed')}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-white text-sm">
-                          {results.recentlyUnfollowed.length}
-                        </span>
-                      </button>
-                    )}
-                  </div>
-
-                  <div className="space-y-2 max-h-96 overflow-y-auto">
-                    {activeOptionalTab === 'closeFriends' && results.closeFriends && (
-                      results.closeFriends.map((user) => (
-                        <UserCard key={user.value} user={user} type="mutual" searchQuery="" />
-                      ))
-                    )}
-                    {activeOptionalTab === 'pending' && results.pendingFollowRequests && (
-                      results.pendingFollowRequests.map((user) => (
-                        <UserCard key={user.value} user={user} type="youFollow" searchQuery="" />
-                      ))
-                    )}
-                    {activeOptionalTab === 'recentRequests' && results.recentFollowRequests && (
-                      results.recentFollowRequests.map((user) => (
-                        <UserCard key={user.value} user={user} type="theyFollow" searchQuery="" />
-                      ))
-                    )}
-                    {activeOptionalTab === 'unfollowed' && results.recentlyUnfollowed && (
-                      results.recentlyUnfollowed.map((user) => (
-                        <UserCard key={user.value} user={user} type="youFollow" searchQuery="" />
-                      ))
-                    )}
-                  </div>
-                </div>
-              )}
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                {t('results.optionalData.title')}
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {results.closeFriends && results.closeFriends.length > 0 && (
+                  <ColumnView
+                    users={results.closeFriends}
+                    type="closeFriends"
+                    title={t('results.tabs.closeFriends')}
+                    description={t('results.descriptions.closeFriends')}
+                    icon={<UserCheck className="w-5 h-5 text-pink-600" />}
+                    emptyMessage={t('results.empty.closeFriends')}
+                    borderColor="border-pink-200"
+                    headerBg="bg-pink-50"
+                  />
+                )}
+                {results.pendingFollowRequests && results.pendingFollowRequests.length > 0 && (
+                  <ColumnView
+                    users={results.pendingFollowRequests}
+                    type="pending"
+                    title={t('results.tabs.pending')}
+                    description={t('results.descriptions.pending')}
+                    icon={<Send className="w-5 h-5 text-yellow-600" />}
+                    emptyMessage={t('results.empty.pending')}
+                    borderColor="border-yellow-200"
+                    headerBg="bg-yellow-50"
+                  />
+                )}
+                {results.recentFollowRequests && results.recentFollowRequests.length > 0 && (
+                  <ColumnView
+                    users={results.recentFollowRequests}
+                    type="recentRequests"
+                    title={t('results.tabs.recentRequests')}
+                    description={t('results.descriptions.recentRequests')}
+                    icon={<Clock className="w-5 h-5 text-indigo-600" />}
+                    emptyMessage={t('results.empty.recentRequests')}
+                    borderColor="border-indigo-200"
+                    headerBg="bg-indigo-50"
+                  />
+                )}
+                {results.recentlyUnfollowed && results.recentlyUnfollowed.length > 0 && (
+                  <ColumnView
+                    users={results.recentlyUnfollowed}
+                    type="unfollowed"
+                    title={t('results.tabs.unfollowed')}
+                    description={t('results.descriptions.unfollowed')}
+                    icon={<UserX className="w-5 h-5 text-gray-600" />}
+                    emptyMessage={t('results.empty.unfollowed')}
+                    borderColor="border-gray-200"
+                    headerBg="bg-gray-50"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
       </main>
+
+      {/* Fullscreen Modal */}
+      {fullscreenColumn && results && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between bg-gray-50">
+              <h2 className="text-xl font-bold text-gray-900">
+                {fullscreenColumn === 'youFollow' && t('results.columns.youFollow.title')}
+                {fullscreenColumn === 'mutual' && t('results.columns.mutual.title')}
+                {fullscreenColumn === 'theyFollow' && t('results.columns.theyFollow.title')}
+                {fullscreenColumn === 'closeFriends' && t('results.tabs.closeFriends')}
+                {fullscreenColumn === 'pending' && t('results.tabs.pending')}
+                {fullscreenColumn === 'recentRequests' && t('results.tabs.recentRequests')}
+                {fullscreenColumn === 'unfollowed' && t('results.tabs.unfollowed')}
+              </h2>
+              <button
+                onClick={() => setFullscreenColumn(null)}
+                className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
+                title={t('results.fullscreen.close')}
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="flex-1 overflow-hidden p-6">
+              {fullscreenColumn === 'youFollow' && (
+                <ColumnView
+                  users={results.youFollowButNotBack}
+                  type="youFollow"
+                  title={t('results.columns.youFollow.title')}
+                  description={t('results.columns.youFollow.description')}
+                  icon={<UserMinus className="w-5 h-5 text-orange-600" />}
+                  emptyMessage={t('results.empty.youFollow')}
+                  borderColor="border-orange-200"
+                  headerBg="bg-orange-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'mutual' && (
+                <ColumnView
+                  users={results.mutualFollows}
+                  type="mutual"
+                  title={t('results.columns.mutual.title')}
+                  description={t('results.columns.mutual.description')}
+                  icon={<Heart className="w-5 h-5 text-green-600" />}
+                  emptyMessage={t('results.empty.mutual')}
+                  borderColor="border-green-200"
+                  headerBg="bg-green-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'theyFollow' && (
+                <ColumnView
+                  users={results.theyFollowButNotBack}
+                  type="theyFollow"
+                  title={t('results.columns.theyFollow.title')}
+                  description={t('results.columns.theyFollow.description')}
+                  icon={<UserPlus className="w-5 h-5 text-blue-600" />}
+                  emptyMessage={t('results.empty.theyFollow')}
+                  borderColor="border-blue-200"
+                  headerBg="bg-blue-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'closeFriends' && results.closeFriends && (
+                <ColumnView
+                  users={results.closeFriends}
+                  type="closeFriends"
+                  title={t('results.tabs.closeFriends')}
+                  description={t('results.descriptions.closeFriends')}
+                  icon={<UserCheck className="w-5 h-5 text-pink-600" />}
+                  emptyMessage={t('results.empty.closeFriends')}
+                  borderColor="border-pink-200"
+                  headerBg="bg-pink-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'pending' && results.pendingFollowRequests && (
+                <ColumnView
+                  users={results.pendingFollowRequests}
+                  type="pending"
+                  title={t('results.tabs.pending')}
+                  description={t('results.descriptions.pending')}
+                  icon={<Send className="w-5 h-5 text-yellow-600" />}
+                  emptyMessage={t('results.empty.pending')}
+                  borderColor="border-yellow-200"
+                  headerBg="bg-yellow-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'recentRequests' && results.recentFollowRequests && (
+                <ColumnView
+                  users={results.recentFollowRequests}
+                  type="recentRequests"
+                  title={t('results.tabs.recentRequests')}
+                  description={t('results.descriptions.recentRequests')}
+                  icon={<Clock className="w-5 h-5 text-indigo-600" />}
+                  emptyMessage={t('results.empty.recentRequests')}
+                  borderColor="border-indigo-200"
+                  headerBg="bg-indigo-50"
+                  isFullscreen={true}
+                />
+              )}
+              {fullscreenColumn === 'unfollowed' && results.recentlyUnfollowed && (
+                <ColumnView
+                  users={results.recentlyUnfollowed}
+                  type="unfollowed"
+                  title={t('results.tabs.unfollowed')}
+                  description={t('results.descriptions.unfollowed')}
+                  icon={<UserX className="w-5 h-5 text-gray-600" />}
+                  emptyMessage={t('results.empty.unfollowed')}
+                  borderColor="border-gray-200"
+                  headerBg="bg-gray-50"
+                  isFullscreen={true}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="px-6 py-8 mt-16">

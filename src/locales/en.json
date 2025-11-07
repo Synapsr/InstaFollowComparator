@@ -115,6 +115,14 @@
     "optionalData": {
       "title": "Additional Data"
     },
+    "sort": {
+      "newestFirst": "Newest first",
+      "oldestFirst": "Oldest first"
+    },
+    "fullscreen": {
+      "open": "Open in fullscreen",
+      "close": "Close fullscreen"
+    },
     "tabs": {
       "mutual": "Mutual Follows",
       "youFollow": "Don't Follow Back",

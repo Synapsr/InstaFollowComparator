@@ -115,6 +115,14 @@
     "optionalData": {
       "title": "附加数据"
     },
+    "sort": {
+      "newestFirst": "最新优先",
+      "oldestFirst": "最旧优先"
+    },
+    "fullscreen": {
+      "open": "全屏打开",
+      "close": "关闭全屏"
+    },
     "tabs": {
       "mutual": "相互关注",
       "youFollow": "未回关",
