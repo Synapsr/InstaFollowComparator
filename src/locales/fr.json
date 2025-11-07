@@ -10,9 +10,9 @@
   },
   "home": {
     "hero": {
-      "title": "Découvrez vos relations",
-      "titleHighlight": "Instagram",
-      "subtitle": "Le seul moyen sûr d'analyser vos relations Instagram. Pas de scraping, aucun risque pour votre compte, aucun outil cassé. Téléchargez simplement l'export officiel de Meta pour découvrir instantanément vos relations de suivi."
+      "title": "Qui ne vous suit plus",
+      "titleHighlight": "sur Instagram ?",
+      "subtitle": "Découvrez qui ne vous suit pas en retour, qui désabonner, et trouvez vos vrais amis Instagram. 100% sûr, privé et gratuit. Vos données restent dans votre navigateur."
     },
     "demo": {
       "title": "Voyez-le en action",
@@ -40,39 +40,39 @@
     },
     "features": {
       "security": {
-        "title": "100% Propre et Sûr",
-        "description": "<strong>Pas de scraping, pas de bannissement, pas d'applications cassées.</strong> Utilise uniquement l'export officiel de Meta. Vos données restent dans votre navigateur."
+        "title": "100% Sûr & Privé",
+        "description": "<strong>Zéro risque pour votre compte. Aucune connexion requise.</strong> Utilise uniquement l'export officiel de Meta. Vos données ne quittent jamais votre navigateur."
       },
       "speed": {
-        "title": "Ultra Rapide",
-        "description": "Obtenez des résultats instantanés avec nos algorithmes de traitement de données optimisés."
+        "title": "Résultats Instantanés",
+        "description": "Découvrez qui ne vous suit plus en quelques secondes. Pas d'attente, pas de procédure compliquée."
       },
       "analysis": {
-        "title": "Analyse Détaillée",
-        "description": "Voyez les abonnements mutuels, les relations à sens unique et des statistiques complètes."
+        "title": "Tout Ce Dont Vous Avez Besoin",
+        "description": "Trouvez qui ne vous suit pas en retour, vos abonnements mutuels, vos vrais fans, et toutes vos relations Instagram."
       }
     },
     "howTo": {
-      "title": "Comment exporter vos données Instagram",
+      "title": "Comment télécharger vos données Instagram",
       "steps": {
         "step1": {
           "title": "Accédez au Centre des comptes",
           "description": "Visitez"
         },
         "step2": {
-          "title": "Créer un export",
+          "title": "Demandez vos données",
           "description": "Sélectionnez votre compte Instagram → Choisissez \"Télécharger sur l'appareil\""
         },
         "step3": {
-          "title": "Personnaliser les informations",
-          "description": "Décochez tout → Cochez uniquement <strong>Contacts → Abonnés et Abonnements</strong> → Sauvegarder"
+          "title": "Sélectionnez ce dont vous avez besoin",
+          "description": "Décochez tout → Cochez uniquement <strong>Abonnés et Abonnements</strong> → Sauvegarder"
         },
         "step4": {
-          "title": "Définir la période et le format",
-          "description": "Période : \"Depuis toujours\" → <strong>Format : JSON</strong> → Commencer l'export"
+          "title": "Choisissez les paramètres",
+          "description": "Période : \"Depuis toujours\" → Format : Sélectionnez l'option recommandée → Lancer le téléchargement"
         }
       },
-      "tip": "<strong>⚡ Export rapide :</strong> Avec seulement les données d'abonnés sélectionnées, votre export sera prêt en <strong>moins d'une minute</strong> ! Vous recevrez immédiatement un e-mail avec le lien de téléchargement.",
+      "tip": "<strong>⚡ Astuce rapide :</strong> Avec seulement les données d'abonnés sélectionnées, votre téléchargement sera prêt en <strong>moins d'une minute</strong> ! Vous recevrez immédiatement un e-mail avec le lien.",
       "video": {
         "title": "Guide Vidéo Étape par Étape",
         "browserNotSupported": "Votre navigateur ne prend pas en charge la balise vidéo."

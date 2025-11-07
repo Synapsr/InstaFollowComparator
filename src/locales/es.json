@@ -10,9 +10,9 @@
   },
   "home": {
     "hero": {
-      "title": "Descubre tus relaciones de",
-      "titleHighlight": "Instagram",
-      "subtitle": "La única forma segura de analizar tus relaciones de Instagram. Sin scraping, sin riesgos de cuenta, sin herramientas rotas. Simplemente sube la exportación oficial de datos de Meta para descubrir instantáneamente tus relaciones de seguimiento."
+      "title": "¿Quién dejó de seguirte",
+      "titleHighlight": "en Instagram?",
+      "subtitle": "Descubre quién no te sigue de vuelta, a quién dejar de seguir, y encuentra tus verdaderos amigos de Instagram. 100% seguro, privado y gratis. Tus datos nunca salen de tu navegador."
     },
     "demo": {
       "title": "Míralo En Acción",
@@ -40,39 +40,39 @@
     },
     "features": {
       "security": {
-        "title": "100% Limpio y Seguro",
-        "description": "<strong>Sin scraping, sin baneos, sin aplicaciones rotas.</strong> Utiliza únicamente la exportación oficial de datos de Meta. Tus datos permanecen en tu navegador."
+        "title": "100% Seguro y Privado",
+        "description": "<strong>Cero riesgo para tu cuenta. No requiere inicio de sesión.</strong> Utiliza únicamente la exportación oficial de Meta. Tus datos nunca salen de tu navegador."
       },
       "speed": {
-        "title": "Súper Rápido",
-        "description": "Obtén resultados instantáneos con nuestros algoritmos optimizados de procesamiento de datos."
+        "title": "Resultados Instantáneos",
+        "description": "Descubre quién dejó de seguirte en segundos. Sin esperas, sin procesos complicados."
       },
       "analysis": {
-        "title": "Análisis Detallado",
-        "description": "Ve seguidores mutuos, relaciones unidireccionales y estadísticas completas."
+        "title": "Todo Lo Que Necesitas",
+        "description": "Encuentra quién no te sigue de vuelta, seguidores mutuos, tus verdaderos fans y todas tus relaciones de Instagram."
       }
     },
     "howTo": {
-      "title": "Cómo exportar tus datos de Instagram",
+      "title": "Cómo descargar tus datos de Instagram",
       "steps": {
         "step1": {
           "title": "Ve al Centro de Cuentas",
           "description": "Visita"
         },
         "step2": {
-          "title": "Crear exportación",
+          "title": "Solicita tus datos",
           "description": "Selecciona tu cuenta de Instagram → Elige \"Descargar al dispositivo\""
         },
         "step3": {
-          "title": "Personalizar información",
-          "description": "Desmarcar todo → Marcar solo <strong>Contactos → Seguidores y Siguiendo</strong> → Guardar"
+          "title": "Selecciona lo que necesitas",
+          "description": "Desmarcar todo → Marcar solo <strong>Seguidores y Siguiendo</strong> → Guardar"
         },
         "step4": {
-          "title": "Establecer período y formato",
-          "description": "Período: \"Todo el tiempo\" → <strong>Formato: JSON</strong> → Iniciar exportación"
+          "title": "Elige la configuración",
+          "description": "Período: \"Todo el tiempo\" → Formato: Selecciona la opción recomendada → Iniciar descarga"
         }
       },
-      "tip": "<strong>⚡ Exportación rápida:</strong> Con solo los datos de seguidores seleccionados, ¡tu exportación estará lista en <strong>menos de un minuto</strong>! Recibirás inmediatamente un email con el enlace de descarga.",
+      "tip": "<strong>⚡ Consejo rápido:</strong> Con solo los datos de seguidores seleccionados, ¡tu descarga estará lista en <strong>menos de un minuto</strong>! Recibirás inmediatamente un email con el enlace.",
       "video": {
         "title": "Guía de Video Paso a Paso",
         "browserNotSupported": "Tu navegador no soporta la etiqueta de video."

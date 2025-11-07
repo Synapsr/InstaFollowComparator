@@ -10,9 +10,9 @@
   },
   "home": {
     "hero": {
-      "title": "发现您的Instagram",
-      "titleHighlight": "关注关系",
-      "subtitle": "分析您的Instagram关系的唯一安全方法。无爬取，无账户风险，无损坏工具。只需上传Meta的官方数据导出即可立即发现您的关注关系。"
+      "title": "谁取关了您",
+      "titleHighlight": "在Instagram上？",
+      "subtitle": "发现谁没有回关您，该取关谁，找到您真正的Instagram朋友。100%安全、私密且免费。您的数据从不离开浏览器。"
     },
     "demo": {
       "title": "实时演示",
@@ -40,39 +40,39 @@
     },
     "features": {
       "security": {
-        "title": "100% 干净安全",
-        "description": "<strong>无爬取，无封禁，无损坏应用。</strong>仅使用Meta的官方数据导出。您的数据留在您的浏览器中。"
+        "title": "100% 安全私密",
+        "description": "<strong>零账户风险。无需登录。</strong>仅使用Meta的官方数据导出。您的数据从不离开浏览器。"
       },
       "speed": {
-        "title": "闪电般快速",
-        "description": "使用我们优化的数据处理算法获得即时结果。"
+        "title": "即时结果",
+        "description": "几秒钟内发现谁取关了您。无需等待，无需复杂流程。"
       },
       "analysis": {
-        "title": "详细分析",
-        "description": "查看相互关注、单向关系和综合统计数据。"
+        "title": "您需要的一切",
+        "description": "找出谁没有回关、相互关注者、真正的粉丝，以及所有Instagram关系。"
       }
     },
     "howTo": {
-      "title": "如何导出您的Instagram数据",
+      "title": "如何下载您的Instagram数据",
       "steps": {
         "step1": {
           "title": "前往账户中心",
           "description": "访问"
         },
         "step2": {
-          "title": "创建导出",
+          "title": "请求您的数据",
           "description": "选择您的Instagram账户 → 选择\"下载到设备\""
         },
         "step3": {
-          "title": "自定义信息",
-          "description": "取消全选 → 仅勾选<strong>联系人 → 粉丝和关注</strong> → 保存"
+          "title": "选择所需内容",
+          "description": "取消全选 → 仅勾选<strong>粉丝和关注</strong> → 保存"
         },
         "step4": {
-          "title": "设置时间段和格式",
-          "description": "时间段：\"全部时间\" → <strong>格式：JSON</strong> → 开始导出"
+          "title": "选择设置",
+          "description": "时间段：\"全部时间\" → 格式：选择推荐选项 → 开始下载"
         }
       },
-      "tip": "<strong>⚡ 快速导出：</strong>仅选择粉丝数据时，您的导出将在<strong>不到一分钟</strong>内准备就绪！您将立即收到包含下载链接的电子邮件。",
+      "tip": "<strong>⚡ 快速提示：</strong>仅选择粉丝数据时，您的下载将在<strong>不到一分钟</strong>内准备就绪！您将立即收到包含链接的电子邮件。",
       "video": {
         "title": "分步视频指南",
         "browserNotSupported": "您的浏览器不支持视频标签。"

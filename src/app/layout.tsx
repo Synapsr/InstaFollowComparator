@@ -8,13 +8,13 @@ import Analytics from '../components/Analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'InstaFollow Comparator',
-  description: 'Compare Instagram followers and following to see who you follow but doesn\'t follow you back, and vice versa',
-  keywords: 'instagram, followers, following, comparison, social-media, analytics',
+  title: 'Who Unfollowed You on Instagram? - Discover for Free & Safe',
+  description: 'Find out who unfollowed you on Instagram, who to unfollow back, and discover your true Instagram friends. 100% free, private & safe. No account risk, no login required.',
+  keywords: 'instagram unfollowers, who unfollowed me instagram, instagram followers tracker, unfollow instagram, instagram analytics free, who doesn\'t follow back, instagram mutual followers, instagram relationships, safe instagram tool, instagram follower checker',
   authors: [{ name: 'InstaFollow Comparator' }],
   openGraph: {
-    title: 'InstaFollow Comparator',
-    description: 'Compare Instagram followers and following to see who you follow but doesn\'t follow you back, and vice versa',
+    title: 'Who Unfollowed You on Instagram? - Free & Safe',
+    description: 'Discover who unfollowed you, who to unfollow, and your real Instagram friends. 100% free, private & secure. Zero account risk.',
     type: 'website',
   },
 }

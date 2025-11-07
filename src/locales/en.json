@@ -10,9 +10,9 @@
   },
   "home": {
     "hero": {
-      "title": "Discover Your Instagram",
-      "titleHighlight": "Follow Relationships",
-      "subtitle": "The only safe way to analyze your Instagram relationships. No scraping, no account risks, no broken tools. Simply upload Meta's official data export to discover your follow relationships instantly."
+      "title": "Who Unfollowed You",
+      "titleHighlight": "on Instagram?",
+      "subtitle": "Discover who doesn't follow you back, who to unfollow, and find your real Instagram friends. 100% safe, private, and free. Your data never leaves your browser."
     },
     "demo": {
       "title": "See It In Action",
@@ -40,39 +40,39 @@
     },
     "features": {
       "security": {
-        "title": "100% Clean & Safe",
-        "description": "<strong>No scraping, no bans, no broken apps.</strong> Uses only Meta's official data export. Your data stays in your browser."
+        "title": "100% Safe & Private",
+        "description": "<strong>Zero account risk. No login required.</strong> Uses only Meta's official data export. Your data never leaves your browser."
       },
       "speed": {
-        "title": "Lightning Fast",
-        "description": "Get instant results with our optimized data processing algorithms."
+        "title": "Instant Results",
+        "description": "Discover who unfollowed you in seconds. No waiting, no complicated process."
       },
       "analysis": {
-        "title": "Detailed Analysis",
-        "description": "See mutual follows, one-way relationships, and comprehensive statistics."
+        "title": "Everything You Need",
+        "description": "Find who doesn't follow back, mutual followers, your real fans, and all your Instagram relationships."
       }
     },
     "howTo": {
-      "title": "How to Export Your Instagram Data",
+      "title": "How to Download Your Instagram Data",
       "steps": {
         "step1": {
           "title": "Go to Accounts Center",
           "description": "Visit"
         },
         "step2": {
-          "title": "Create Export",
+          "title": "Request Your Data",
           "description": "Select your Instagram account → Choose \"Download to device\""
         },
         "step3": {
-          "title": "Customize Information",
-          "description": "Uncheck all → Check only <strong>Contacts → Followers and Following</strong> → Save"
+          "title": "Select What You Need",
+          "description": "Uncheck all → Check only <strong>Followers and Following</strong> → Save"
         },
         "step4": {
-          "title": "Set Period & Format",
-          "description": "Period: \"All time\" → <strong>Format: JSON</strong> → Start Export"
+          "title": "Choose Settings",
+          "description": "Period: \"All time\" → Format: Select the recommended option → Start download"
         }
       },
-      "tip": "<strong>⚡ Fast Export:</strong> With only followers data selected, your export will be ready in <strong>less than a minute</strong>! You'll receive an email with the download link immediately.",
+      "tip": "<strong>⚡ Quick tip:</strong> With only followers data selected, your download will be ready in <strong>less than a minute</strong>! You'll receive an email with the link immediately.",
       "video": {
         "title": "Step-by-Step Video Guide",
         "browserNotSupported": "Your browser does not support the video tag."

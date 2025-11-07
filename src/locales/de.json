@@ -10,9 +10,9 @@
   },
   "home": {
     "hero": {
-      "title": "Entdecke deine Instagram",
-      "titleHighlight": "Follow-Beziehungen",
-      "subtitle": "Der einzige sichere Weg, deine Instagram-Beziehungen zu analysieren. Kein Scraping, keine Account-Risiken, keine kaputten Tools. Lade einfach Metas offiziellen Datenexport hoch, um deine Follow-Beziehungen sofort zu entdecken."
+      "title": "Wer folgt dir nicht mehr",
+      "titleHighlight": "auf Instagram?",
+      "subtitle": "Finde heraus, wer dir nicht zurückfolgt, wen du entfolgen solltest, und entdecke deine echten Instagram-Freunde. 100% sicher, privat und kostenlos. Deine Daten bleiben in deinem Browser."
     },
     "demo": {
       "title": "Sieh Es In Aktion",
@@ -40,39 +40,39 @@
     },
     "features": {
       "security": {
-        "title": "100% Sauber und Sicher",
-        "description": "<strong>Kein Scraping, keine Sperren, keine kaputten Apps.</strong> Verwendet nur Metas offiziellen Datenexport. Deine Daten bleiben in deinem Browser."
+        "title": "100% Sicher & Privat",
+        "description": "<strong>Null Risiko für dein Konto. Kein Login erforderlich.</strong> Verwendet nur Metas offiziellen Datenexport. Deine Daten verlassen nie deinen Browser."
       },
       "speed": {
-        "title": "Blitzschnell",
-        "description": "Erhalte sofortige Ergebnisse mit unseren optimierten Datenverarbeitungsalgorithmen."
+        "title": "Sofortige Ergebnisse",
+        "description": "Finde in Sekunden heraus, wer dir nicht mehr folgt. Kein Warten, kein komplizierter Prozess."
       },
       "analysis": {
-        "title": "Detaillierte Analyse",
-        "description": "Sieh gegenseitige Follows, einseitige Beziehungen und umfassende Statistiken."
+        "title": "Alles Was Du Brauchst",
+        "description": "Finde heraus, wer nicht zurückfolgt, gegenseitige Follower, deine echten Fans und alle deine Instagram-Beziehungen."
       }
     },
     "howTo": {
-      "title": "So exportierst du deine Instagram-Daten",
+      "title": "So lädst du deine Instagram-Daten herunter",
       "steps": {
         "step1": {
           "title": "Gehe zum Konten-Center",
           "description": "Besuche"
         },
         "step2": {
-          "title": "Export erstellen",
+          "title": "Fordere deine Daten an",
           "description": "Wähle dein Instagram-Konto → Wähle \"Auf Gerät herunterladen\""
         },
         "step3": {
-          "title": "Informationen anpassen",
-          "description": "Alle abwählen → Nur <strong>Kontakte → Follower und Folge ich</strong> auswählen → Speichern"
+          "title": "Wähle was du brauchst",
+          "description": "Alle abwählen → Nur <strong>Follower und Folge ich</strong> auswählen → Speichern"
         },
         "step4": {
-          "title": "Zeitraum und Format festlegen",
-          "description": "Zeitraum: \"Alle Zeit\" → <strong>Format: JSON</strong> → Export starten"
+          "title": "Einstellungen wählen",
+          "description": "Zeitraum: \"Alle Zeit\" → Format: Empfohlene Option wählen → Download starten"
         }
       },
-      "tip": "<strong>⚡ Schneller Export:</strong> Mit nur ausgewählten Follower-Daten ist dein Export in <strong>weniger als einer Minute</strong> bereit! Du erhältst sofort eine E-Mail mit dem Download-Link.",
+      "tip": "<strong>⚡ Schneller Tipp:</strong> Mit nur ausgewählten Follower-Daten ist dein Download in <strong>weniger als einer Minute</strong> bereit! Du erhältst sofort eine E-Mail mit dem Link.",
       "video": {
         "title": "Schritt-für-Schritt Video-Anleitung",
         "browserNotSupported": "Dein Browser unterstützt das Video-Tag nicht."
