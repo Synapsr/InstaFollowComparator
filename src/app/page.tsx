@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { Upload, FileText, Shield, Zap, Github, Heart, RotateCcw } from 'lucide-react'
+import { Upload, FileText, Shield, Zap, Github, Heart, RotateCcw, Check, X, Code, Lock, Globe, DollarSign, Users, BarChart3, ChevronDown } from 'lucide-react'
 import { processInstagramZip } from '../lib/instagram-parser'
 import { ComparisonResult, UploadStatus } from '../types/instagram'
 import { useTranslation } from '../contexts/I18nContext'
@@ -195,14 +195,45 @@ export default function HomePage() {
       <main className="flex-1 px-6 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-6 px-4 py-2 bg-primary-50 border border-primary-200 rounded-full">
+              <p className="text-primary-600 text-sm font-medium flex items-center gap-2">
+                <Shield className="w-4 h-4" />
+                100% Safe • No Login Required • Open Source
+              </p>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               {t('home.hero.title')}
-              <span className="text-gradient block">{t('home.hero.titleHighlight')}</span>
+              <span className="text-gradient block mt-2">{t('home.hero.titleHighlight')}</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
               {t('home.hero.subtitle')}
             </p>
+          </div>
+
+          {/* Stats Section */}
+          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
+            <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-100 rounded-xl mb-3">
+                <Users className="w-6 h-6 text-primary-600" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">10K+</div>
+              <div className="text-sm text-gray-600">{t('home.stats.users')}</div>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-white rounded-2xl border border-orange-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-100 rounded-xl mb-3">
+                <BarChart3 className="w-6 h-6 text-orange-600" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">50K+</div>
+              <div className="text-sm text-gray-600">{t('home.stats.analyses')}</div>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-xl mb-3">
+                <Globe className="w-6 h-6 text-green-600" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">50+</div>
+              <div className="text-sm text-gray-600">{t('home.stats.countries')}</div>
+            </div>
           </div>
 
           {/* Demo Video Section */}
@@ -301,8 +332,8 @@ export default function HomePage() {
 
           {/* Features */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="card card-hover text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="card card-hover text-center group">
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-primary-200 transition-all duration-300">
                 <Shield className="w-6 h-6 text-primary-500" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('home.features.security.title')}</h4>
@@ -310,8 +341,8 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="card card-hover text-center">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="card card-hover text-center group">
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-orange-200 transition-all duration-300">
                 <Zap className="w-6 h-6 text-orange-500" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('home.features.speed.title')}</h4>
@@ -320,14 +351,121 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="card card-hover text-center">
-              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div className="card card-hover text-center group">
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-primary-200 transition-all duration-300">
                 <FileText className="w-6 h-6 text-primary-500" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('home.features.analysis.title')}</h4>
               <p className="text-gray-600 text-sm">
                 {t('home.features.analysis.description')}
               </p>
+            </div>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">{t('home.trustBadges.title')}</h3>
+            <div className="grid md:grid-cols-4 gap-4">
+              <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+                  <Code className="w-5 h-5 text-blue-600" />
+                </div>
+                <h5 className="font-semibold text-gray-900 mb-1 text-sm">{t('home.trustBadges.openSource.title')}</h5>
+                <p className="text-xs text-gray-600">{t('home.trustBadges.openSource.description')}</p>
+              </div>
+              <div className="bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 hover:border-green-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+                  <Lock className="w-5 h-5 text-green-600" />
+                </div>
+                <h5 className="font-semibold text-gray-900 mb-1 text-sm">{t('home.trustBadges.noLogin.title')}</h5>
+                <p className="text-xs text-gray-600">{t('home.trustBadges.noLogin.description')}</p>
+              </div>
+              <div className="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+                  <Shield className="w-5 h-5 text-purple-600" />
+                </div>
+                <h5 className="font-semibold text-gray-900 mb-1 text-sm">{t('home.trustBadges.localOnly.title')}</h5>
+                <p className="text-xs text-gray-600">{t('home.trustBadges.localOnly.description')}</p>
+              </div>
+              <div className="bg-gradient-to-br from-orange-50 to-white p-6 rounded-xl border border-orange-100 hover:border-orange-300 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
+                  <DollarSign className="w-5 h-5 text-orange-600" />
+                </div>
+                <h5 className="font-semibold text-gray-900 mb-1 text-sm">{t('home.trustBadges.free.title')}</h5>
+                <p className="text-xs text-gray-600">{t('home.trustBadges.free.description')}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Comparison Section */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-3">{t('home.comparison.title')}</h3>
+              <p className="text-gray-600">{t('home.comparison.subtitle')}</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl border-2 border-green-200 relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-xs font-bold rounded-bl-lg">SAFE</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <Check className="w-5 h-5 text-white" />
+                  </div>
+                  {t('home.comparison.safe.title')}
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.safe.point1')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.safe.point2')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.safe.point3')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.safe.point4')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.safe.point5')}</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl border-2 border-red-200 relative overflow-hidden opacity-75">
+                <div className="absolute top-0 right-0 bg-red-500 text-white px-4 py-1 text-xs font-bold rounded-bl-lg">RISKY</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <X className="w-5 h-5 text-white" />
+                  </div>
+                  {t('home.comparison.risky.title')}
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.risky.point1')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.risky.point2')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.risky.point3')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.risky.point4')}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <X className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{t('home.comparison.risky.point5')}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -390,6 +528,52 @@ export default function HomePage() {
                 containerClassName="aspect-video rounded-xl overflow-hidden shadow-lg bg-gray-900"
                 fallbackText={t('home.howTo.video.browserNotSupported')}
               />
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">{t('home.faq.title')}</h3>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              <details className="group bg-white rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 overflow-hidden">
+                <summary className="cursor-pointer p-6 font-semibold text-gray-900 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                  {t('home.faq.q1.question')}
+                  <ChevronDown className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 border-t border-gray-100 pt-4">
+                  {t('home.faq.q1.answer')}
+                </div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 overflow-hidden">
+                <summary className="cursor-pointer p-6 font-semibold text-gray-900 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                  {t('home.faq.q2.question')}
+                  <ChevronDown className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 border-t border-gray-100 pt-4">
+                  {t('home.faq.q2.answer')}
+                </div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 overflow-hidden">
+                <summary className="cursor-pointer p-6 font-semibold text-gray-900 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                  {t('home.faq.q3.question')}
+                  <ChevronDown className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 border-t border-gray-100 pt-4">
+                  {t('home.faq.q3.answer')}
+                </div>
+              </details>
+
+              <details className="group bg-white rounded-xl border border-gray-200 hover:border-primary-300 transition-all duration-300 overflow-hidden">
+                <summary className="cursor-pointer p-6 font-semibold text-gray-900 flex items-center justify-between hover:bg-gray-50 transition-colors">
+                  {t('home.faq.q4.question')}
+                  <ChevronDown className="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 border-t border-gray-100 pt-4">
+                  {t('home.faq.q4.answer')}
+                </div>
+              </details>
             </div>
           </div>
         </div>

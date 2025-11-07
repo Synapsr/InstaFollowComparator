@@ -52,6 +52,69 @@
         "description": "找出谁没有回关、相互关注者、真正的粉丝，以及所有Instagram关系。"
       }
     },
+    "stats": {
+      "users": "满意用户",
+      "analyses": "完成分析",
+      "countries": "国家"
+    },
+    "trustBadges": {
+      "title": "为什么信任我们？",
+      "openSource": {
+        "title": "开源",
+        "description": "社区验证的代码"
+      },
+      "noLogin": {
+        "title": "无需登录",
+        "description": "您的账户保持安全"
+      },
+      "localOnly": {
+        "title": "100% 本地",
+        "description": "数据从不离开浏览器"
+      },
+      "free": {
+        "title": "永久免费",
+        "description": "无隐藏费用"
+      }
+    },
+    "comparison": {
+      "title": "安全 vs 风险",
+      "subtitle": "为什么使用我们的工具而不是第三方应用？",
+      "safe": {
+        "title": "我们的工具（安全）",
+        "point1": "使用Meta官方导出",
+        "point2": "无需账户访问权限",
+        "point3": "零封禁风险",
+        "point4": "您的数据保持私密",
+        "point5": "开源且透明"
+      },
+      "risky": {
+        "title": "第三方应用（风险）",
+        "point1": "需要您的密码",
+        "point2": "违反Instagram服务条款",
+        "point3": "账户封禁风险",
+        "point4": "您的数据在他们的服务器上",
+        "point5": "未知代码"
+      }
+    },
+    "faq": {
+      "title": "快速问答",
+      "q1": {
+        "question": "真的安全吗？",
+        "answer": "是的！我们只使用Meta的官方数据导出。无需登录，无需密码，无需访问您的账户。"
+      },
+      "q2": {
+        "question": "需要多长时间？",
+        "answer": "Instagram导出不到一分钟。上传到这里后，分析是即时的。"
+      },
+      "q3": {
+        "question": "你们会存储我的数据吗？",
+        "answer": "从不。一切都在您的浏览器中进行。我们没有服务器来存储您的数据。"
+      },
+      "q4": {
+        "question": "真的免费吗？",
+        "answer": "是的，永久完全免费。没有高级版本，没有隐藏费用。"
+      }
+    },
     "howTo": {
       "title": "如何下载您的Instagram数据",
       "steps": {

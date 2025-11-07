@@ -52,6 +52,69 @@
         "description": "Find who doesn't follow back, mutual followers, your real fans, and all your Instagram relationships."
       }
     },
+    "stats": {
+      "users": "Happy Users",
+      "analyses": "Analyses Completed",
+      "countries": "Countries"
+    },
+    "trustBadges": {
+      "title": "Why Trust Us?",
+      "openSource": {
+        "title": "Open Source",
+        "description": "Code verified by the community"
+      },
+      "noLogin": {
+        "title": "No Login",
+        "description": "Your account stays safe"
+      },
+      "localOnly": {
+        "title": "100% Local",
+        "description": "Data never leaves your browser"
+      },
+      "free": {
+        "title": "Forever Free",
+        "description": "No hidden costs"
+      }
+    },
+    "comparison": {
+      "title": "Safe vs Risky",
+      "subtitle": "Why use our tool instead of third-party apps?",
+      "safe": {
+        "title": "Our Tool (Safe)",
+        "point1": "Uses official Meta export",
+        "point2": "No account access required",
+        "point3": "Zero risk of ban",
+        "point4": "Your data stays private",
+        "point5": "Open source & transparent"
+      },
+      "risky": {
+        "title": "Third-party Apps (Risky)",
+        "point1": "Requires your password",
+        "point2": "Violates Instagram ToS",
+        "point3": "Risk of account ban",
+        "point4": "Your data on their servers",
+        "point5": "Unknown code"
+      }
+    },
+    "faq": {
+      "title": "Quick Questions",
+      "q1": {
+        "question": "Is it really safe?",
+        "answer": "Yes! We only use Meta's official data export. No login, no password, no access to your account."
+      },
+      "q2": {
+        "question": "How long does it take?",
+        "answer": "The Instagram export takes less than a minute. Once you upload it here, analysis is instant."
+      },
+      "q3": {
+        "question": "Do you store my data?",
+        "answer": "Never. Everything happens in your browser. We don't have servers to store your data."
+      },
+      "q4": {
+        "question": "Is it really free?",
+        "answer": "Yes, completely free forever. No premium version, no hidden fees."
+      }
+    },
     "howTo": {
       "title": "How to Download Your Instagram Data",
       "steps": {

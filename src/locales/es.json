@@ -52,6 +52,69 @@
         "description": "Encuentra quién no te sigue de vuelta, seguidores mutuos, tus verdaderos fans y todas tus relaciones de Instagram."
       }
     },
+    "stats": {
+      "users": "Usuarios Felices",
+      "analyses": "Análisis Completados",
+      "countries": "Países"
+    },
+    "trustBadges": {
+      "title": "¿Por qué confiar en nosotros?",
+      "openSource": {
+        "title": "Código Abierto",
+        "description": "Código verificado por la comunidad"
+      },
+      "noLogin": {
+        "title": "Sin Inicio de Sesión",
+        "description": "Tu cuenta permanece segura"
+      },
+      "localOnly": {
+        "title": "100% Local",
+        "description": "Los datos nunca salen de tu navegador"
+      },
+      "free": {
+        "title": "Gratis Para Siempre",
+        "description": "Sin costos ocultos"
+      }
+    },
+    "comparison": {
+      "title": "Seguro vs Arriesgado",
+      "subtitle": "¿Por qué usar nuestra herramienta en lugar de apps de terceros?",
+      "safe": {
+        "title": "Nuestra Herramienta (Segura)",
+        "point1": "Usa la exportación oficial de Meta",
+        "point2": "No requiere acceso a la cuenta",
+        "point3": "Cero riesgo de baneo",
+        "point4": "Tus datos permanecen privados",
+        "point5": "Código abierto y transparente"
+      },
+      "risky": {
+        "title": "Apps de Terceros (Arriesgadas)",
+        "point1": "Requiere tu contraseña",
+        "point2": "Viola los términos de Instagram",
+        "point3": "Riesgo de baneo de cuenta",
+        "point4": "Tus datos en sus servidores",
+        "point5": "Código desconocido"
+      }
+    },
+    "faq": {
+      "title": "Preguntas Rápidas",
+      "q1": {
+        "question": "¿Es realmente seguro?",
+        "answer": "¡Sí! Solo usamos la exportación oficial de Meta. Sin inicio de sesión, sin contraseña, sin acceso a tu cuenta."
+      },
+      "q2": {
+        "question": "¿Cuánto tiempo tarda?",
+        "answer": "La exportación de Instagram tarda menos de un minuto. Una vez que la subes aquí, el análisis es instantáneo."
+      },
+      "q3": {
+        "question": "¿Almacenan mis datos?",
+        "answer": "Nunca. Todo sucede en tu navegador. No tenemos servidores para almacenar tus datos."
+      },
+      "q4": {
+        "question": "¿Es realmente gratis?",
+        "answer": "Sí, completamente gratis para siempre. Sin versión premium, sin tarifas ocultas."
+      }
+    },
     "howTo": {
       "title": "Cómo descargar tus datos de Instagram",
       "steps": {

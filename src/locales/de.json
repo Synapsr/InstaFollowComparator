@@ -52,6 +52,69 @@
         "description": "Finde heraus, wer nicht zurückfolgt, gegenseitige Follower, deine echten Fans und alle deine Instagram-Beziehungen."
       }
     },
+    "stats": {
+      "users": "Zufriedene Nutzer",
+      "analyses": "Abgeschlossene Analysen",
+      "countries": "Länder"
+    },
+    "trustBadges": {
+      "title": "Warum uns vertrauen?",
+      "openSource": {
+        "title": "Open Source",
+        "description": "Code von der Community verifiziert"
+      },
+      "noLogin": {
+        "title": "Kein Login",
+        "description": "Dein Konto bleibt sicher"
+      },
+      "localOnly": {
+        "title": "100% Lokal",
+        "description": "Daten verlassen nie deinen Browser"
+      },
+      "free": {
+        "title": "Für Immer Kostenlos",
+        "description": "Keine versteckten Kosten"
+      }
+    },
+    "comparison": {
+      "title": "Sicher vs Riskant",
+      "subtitle": "Warum unser Tool statt Drittanbieter-Apps nutzen?",
+      "safe": {
+        "title": "Unser Tool (Sicher)",
+        "point1": "Nutzt offiziellen Meta-Export",
+        "point2": "Kein Kontozugriff erforderlich",
+        "point3": "Null Risiko für Sperrung",
+        "point4": "Deine Daten bleiben privat",
+        "point5": "Open Source & transparent"
+      },
+      "risky": {
+        "title": "Drittanbieter-Apps (Riskant)",
+        "point1": "Verlangt dein Passwort",
+        "point2": "Verstößt gegen Instagram-AGB",
+        "point3": "Risiko für Kontosperrung",
+        "point4": "Deine Daten auf deren Servern",
+        "point5": "Unbekannter Code"
+      }
+    },
+    "faq": {
+      "title": "Schnelle Fragen",
+      "q1": {
+        "question": "Ist es wirklich sicher?",
+        "answer": "Ja! Wir nutzen nur den offiziellen Meta-Datenexport. Kein Login, kein Passwort, kein Zugriff auf dein Konto."
+      },
+      "q2": {
+        "question": "Wie lange dauert es?",
+        "answer": "Der Instagram-Export dauert weniger als eine Minute. Sobald du ihn hier hochlädst, ist die Analyse sofort fertig."
+      },
+      "q3": {
+        "question": "Speichert ihr meine Daten?",
+        "answer": "Niemals. Alles passiert in deinem Browser. Wir haben keine Server, um deine Daten zu speichern."
+      },
+      "q4": {
+        "question": "Ist es wirklich kostenlos?",
+        "answer": "Ja, komplett kostenlos für immer. Keine Premium-Version, keine versteckten Gebühren."
+      }
+    },
     "howTo": {
       "title": "So lädst du deine Instagram-Daten herunter",
       "steps": {

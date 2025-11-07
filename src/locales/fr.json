@@ -52,6 +52,69 @@
         "description": "Trouvez qui ne vous suit pas en retour, vos abonnements mutuels, vos vrais fans, et toutes vos relations Instagram."
       }
     },
+    "stats": {
+      "users": "Utilisateurs Satisfaits",
+      "analyses": "Analyses Complétées",
+      "countries": "Pays"
+    },
+    "trustBadges": {
+      "title": "Pourquoi nous faire confiance ?",
+      "openSource": {
+        "title": "Open Source",
+        "description": "Code vérifié par la communauté"
+      },
+      "noLogin": {
+        "title": "Aucune Connexion",
+        "description": "Votre compte reste sécurisé"
+      },
+      "localOnly": {
+        "title": "100% Local",
+        "description": "Vos données ne quittent jamais votre navigateur"
+      },
+      "free": {
+        "title": "Gratuit à Jamais",
+        "description": "Aucun coût caché"
+      }
+    },
+    "comparison": {
+      "title": "Sûr vs Risqué",
+      "subtitle": "Pourquoi utiliser notre outil plutôt que des applications tierces ?",
+      "safe": {
+        "title": "Notre Outil (Sûr)",
+        "point1": "Utilise l'export officiel Meta",
+        "point2": "Aucun accès au compte requis",
+        "point3": "Zéro risque de bannissement",
+        "point4": "Vos données restent privées",
+        "point5": "Open source & transparent"
+      },
+      "risky": {
+        "title": "Apps Tierces (Risqué)",
+        "point1": "Demande votre mot de passe",
+        "point2": "Viole les CGU d'Instagram",
+        "point3": "Risque de bannissement",
+        "point4": "Vos données sur leurs serveurs",
+        "point5": "Code inconnu"
+      }
+    },
+    "faq": {
+      "title": "Questions Rapides",
+      "q1": {
+        "question": "Est-ce vraiment sûr ?",
+        "answer": "Oui ! Nous utilisons uniquement l'export officiel de Meta. Aucune connexion, aucun mot de passe, aucun accès à votre compte."
+      },
+      "q2": {
+        "question": "Combien de temps ça prend ?",
+        "answer": "L'export Instagram prend moins d'une minute. Une fois uploadé ici, l'analyse est instantanée."
+      },
+      "q3": {
+        "question": "Stockez-vous mes données ?",
+        "answer": "Jamais. Tout se passe dans votre navigateur. Nous n'avons pas de serveurs pour stocker vos données."
+      },
+      "q4": {
+        "question": "Est-ce vraiment gratuit ?",
+        "answer": "Oui, complètement gratuit pour toujours. Pas de version premium, pas de frais cachés."
+      }
+    },
     "howTo": {
       "title": "Comment télécharger vos données Instagram",
       "steps": {
