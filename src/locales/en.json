@@ -130,7 +130,7 @@
       "closeFriends": "Close Friends",
       "pending": "Pending Requests",
       "recentRequests": "Recent Follow Requests",
-      "unfollowed": "Recently Unfollowed"
+      "unfollowed": "You Unfollowed"
     },
     "descriptions": {
       "mutual": "People who follow you and you follow back",
@@ -139,7 +139,7 @@
       "closeFriends": "Users you've added to your close friends list",
       "pending": "Follow requests you've sent that are still pending",
       "recentRequests": "Recent follow requests received from other users",
-      "unfollowed": "Accounts you've recently unfollowed"
+      "unfollowed": "Accounts you recently unfollowed"
     },
     "search": {
       "placeholder": "Search accounts...",

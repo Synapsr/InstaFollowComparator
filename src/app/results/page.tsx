@@ -529,7 +529,7 @@ export default function ResultsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 {t('results.optionalData.title')}
               </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 {results.closeFriends && results.closeFriends.length > 0 && (
                   <ColumnView
                     users={results.closeFriends}
@@ -586,8 +586,14 @@ export default function ResultsPage() {
 
       {/* Fullscreen Modal */}
       {fullscreenColumn && results && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden">
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setFullscreenColumn(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Modal Header */}
             <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between bg-gray-50">
               <h2 className="text-xl font-bold text-gray-900">

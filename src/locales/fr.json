@@ -130,7 +130,7 @@
       "closeFriends": "Amis proches",
       "pending": "Demandes en attente",
       "recentRequests": "Demandes récentes",
-      "unfollowed": "Récemment désabonnés"
+      "unfollowed": "Vous avez désabonné"
     },
     "descriptions": {
       "mutual": "Personnes qui vous suivent et que vous suivez en retour",
@@ -139,7 +139,7 @@
       "closeFriends": "Utilisateurs que vous avez ajoutés à votre liste d'amis proches",
       "pending": "Demandes de suivi que vous avez envoyées et qui sont toujours en attente",
       "recentRequests": "Demandes de suivi récentes reçues d'autres utilisateurs",
-      "unfollowed": "Comptes que vous avez récemment désabonnés"
+      "unfollowed": "Comptes que vous avez désabonnés récemment"
     },
     "search": {
       "placeholder": "Rechercher des comptes...",
